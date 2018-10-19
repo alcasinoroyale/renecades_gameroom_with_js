@@ -1,24 +1,7 @@
-# README
+#Renecades Game Room
+Renecades is a rails app that allows players to create their own exclusive game room and earn achievements by playing the variety of games.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Things that I need to cover:
+* Installation and Usage
+* Contributing
+* License
