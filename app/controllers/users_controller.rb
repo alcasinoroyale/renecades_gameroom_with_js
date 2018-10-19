@@ -12,4 +12,18 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def show
+    if logged_in?
+      @user = User.find_by(id: params[:id])
+    else
+      redirect_to root_url
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :favorite_game, :bio)
+  end
 end
