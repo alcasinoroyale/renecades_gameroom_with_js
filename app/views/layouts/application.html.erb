@@ -14,8 +14,11 @@
       <nav>
         <%= link_to "Home", root_path %><br>
         <%= link_to "View Games", games_path %><br>
-        <%= link_to "Login", '/login' if !@current_user %><br>
-        <%= link_to "Logout", '/logout' if @current_user %>
+        <% if !@current_user %>
+          <%= link_to "Login", '/login' %>
+        <% elsif @current_user %>
+          <%= link_to "Logout", '/logout' %>
+        <% end %>
         <br>
       </nav>
     </header>

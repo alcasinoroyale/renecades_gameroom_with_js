@@ -1,4 +1,12 @@
 <h4><%= @user.username %>'s Profile</h4>
+Bio: <%= @user.bio %><br>
+Favorite Game: <%= @user.favorite_game %>
 
 <h4>My Game Achievements and Rewards</h4>
 <%= link_to "View Games", games_path %>
+
+<br>
+<h4>Renecades Players:</h4>
+<% @users.each do |user| %>
+<p><%= user.id %>. <%= user.username %></p>
+<% end %>

@@ -5,3 +5,5 @@
   <li>Table Games</li>
   <li><%= link_to "Create Your Own Game", new_game_path %></li>
 <ol>
+
+<%= link_to "Profile Page", user_path(@user) if @current_user %><br>

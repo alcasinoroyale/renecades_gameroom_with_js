@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.save
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.all
     if logged_in?
       @user = User.find_by(id: params[:id])
     else
