@@ -14,9 +14,10 @@
       <nav>
         <%= link_to "Home", root_path %><br>
         <%= link_to "View Games", games_path %><br>
-        <% if !@current_user %>
+        <% if !logged_in? %>
           <%= link_to "Login", '/login' %>
-        <% elsif @current_user %>
+        <% elsif logged_in? %>
+          <%= link_to "Profile Page", user_path(current_user) %><br>
           <%= link_to "Logout", '/logout' %>
         <% end %>
         <br>
