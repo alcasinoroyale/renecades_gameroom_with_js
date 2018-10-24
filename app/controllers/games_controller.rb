@@ -9,7 +9,10 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(game_params)
-    redirect_to game_path(@game)
+    if @game.save
+      redirect_to game_path(@game)
+    else
+      render 'new'
   end
 
   def edit
