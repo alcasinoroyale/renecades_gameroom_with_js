@@ -12,4 +12,4 @@ board_games = Category.create(name: "Board Games")
 video_games = Category.create(name: "Video Games")
 table_games = Category.create(name: "Table Games")
 
-air_hockey = Game.create(name: "Air Hockey", description: "Players face off with paddles and a puck"), objective: "First player to score 7 goals wins the game", number_of_players: "2", reward_points: "100", genre: "Sport"
+air_hockey = Game.create(name: "Air Hockey", description: "Players face off with paddles and a puck", objective: "First player to score 7 goals wins the game", number_of_players: "2", reward_points: "100", genre: "Sport")
