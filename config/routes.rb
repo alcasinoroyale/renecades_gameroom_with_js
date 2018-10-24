@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   resources :users, only: [:new, :create, :show]
   resources :games
+  resources :tokens
   resources :sessions, only: [:new, :create, :destroy]
 
   get '/login', to: 'sessions#new'
