@@ -1,22 +1,36 @@
+<h3>Create a New Game</h3>
 <%= form_for @game do |f| %>
 
- <%= f.label :name %><br>
- <%= f.text_field :name %></br>
+ <%= f.label :name, "Game Title:" %><br>
+ <%= f.text_field :name %><br><br>
 
- <%= f.label :description %><br>
- <%= f.text_field :description %></br>
+ <%= f.label :description, "Game Description:"%><br>
+ <%= f.text_field :description %><br><br>
 
- <%= f.label :objective %><br>
- <%= f.text_field :objective %></br>
+ <%= f.label :objective, "Game Objective:"%><br>
+ <%= f.text_field :objective %><br><br>
 
- <%= f.label :number_of_players %><br>
- <%= f.text_field :number_of_players %></br>
+ <%= f.label :number_of_players, "# of Players:" %><br>
+ <%= f.text_field :number_of_players %><br><br>
 
- <%= f.label :reward_points %><br>
- <%= f.text_field :reward_points %></br>
+ <%= f.label :reward_points, "# of Reward Points:" %><br>
+ <%= f.text_field :reward_points %><br><br>
 
- <%= f.label :genre %><br>
- <%= f.text_field :genre %></br>
+ <%= f.label :genre, "Game Genre:" %><br>
+ <%= f.text_field :genre %><br><br>
 
- <%= f.submit %></br>
+ <%= f.label :category_id, "Gaming Category:" %><br>
+  1 - "Board Games"
+ <br>
+  2 - "Video Games"
+ <br>
+  3 - "Table Games"
+ <br>
+ <br>
+
+ <%= f.text_field :category_id %><br>
+
+ <br>
+
+ <%= f.submit %>
 <% end %>
