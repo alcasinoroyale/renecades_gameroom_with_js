@@ -1,1 +1,13 @@
 <h2><%= @game.name %></h2>
+<%= @game.description %><br>
+<%= @game.objective %><br><br>
+
+Number of Players: <%= @game.number_of_players %><br>
+Reward Points: <%= @game.reward_points %><br>
+Genre: <%= @game.genre %><br><br>
+
+<% if logged_in? %>
+<%= link_to "Play #{@game.name}" %>
+<% elsif !logged_in? %>
+<%= link_to "Join Renecades and start playing", new_user_path %>
+<% end %>
