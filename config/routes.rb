@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#home'
   resources :users, only: [:new, :create, :show]
+
+  resources :categories, only: [:index, :show] do
+    resources :games
+  end
+
   resources :games
   resources :tokens
   resources :sessions, only: [:new, :create, :destroy]
