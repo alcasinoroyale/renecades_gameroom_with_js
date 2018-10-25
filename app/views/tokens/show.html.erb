@@ -1,0 +1,5 @@
+<%= form_for @token do |f| %>
+  <%= f.hidden_field :game_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.submit "Play this game" %>
+<% end %>

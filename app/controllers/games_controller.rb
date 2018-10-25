@@ -29,6 +29,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @current_user = current_user
+    @token = @games.tokens.build(user_id:current_user.id)
   end
 
   def destroy

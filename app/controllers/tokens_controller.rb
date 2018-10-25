@@ -5,6 +5,7 @@ class TokensController < ApplicationController
 
     def create
       @token = Token.create(token_params)
+      flash[:message] = @token.play_game
       redirect_to user_path(@token.user)
     end
 
