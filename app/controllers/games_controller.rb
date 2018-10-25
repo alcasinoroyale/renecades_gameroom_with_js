@@ -9,7 +9,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    if @game.save
+    @game.save
     binding.pry
     redirect_to game_path(@game)
   end
