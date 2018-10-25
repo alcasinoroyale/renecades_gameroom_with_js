@@ -1,8 +1,8 @@
 #USERS:
-user_1 = User.create(username: "Geralt of Rivia", email: "geralt@gmail.com", bio: "Loves Role-playing Games", favorite_game: "The Witcher", password: "geralt")
-user_2 = User.create(username: "Yoshi", email: "yoshi@gmail.com", bio: "Nintendo is my childhood", favorite_game: "Mario Kart", password: "nintendo")
-user_3 = User.create(username: "Jon Snow", email: "jonsnow@gmail.com", bio: "King in the North!", favorite_game: "Ping Pong", password: "bastard")
-user_4 = User.create(username: "Zelda", email: "zelda@gmail.com", bio: "Princess of Destiny", favorite_game: "Breath of the Wild", password: "castle")
+user_1 = User.create(username: "Geralt of Rivia", email: "geralt@gmail.com", bio: "Loves Role-playing Games", favorite_game: "The Witcher", reward_points: "30", password: "geralt")
+user_2 = User.create(username: "Yoshi", email: "yoshi@gmail.com", bio: "Nintendo is my childhood", favorite_game: "Mario Kart", reward_points: "20", password: "nintendo")
+user_3 = User.create(username: "Jon Snow", email: "jonsnow@gmail.com", bio: "King in the North!", favorite_game: "Ping Pong", reward_points: "40", password: "bastard")
+user_4 = User.create(username: "Zelda", email: "zelda@gmail.com", bio: "Princess of Destiny", favorite_game: "Breath of the Wild", reward_points: "15", password: "castle")
 
 board = Category.create(name: "Board Games")
 connect_four = Game.create(name: "Connect Four", description: "Players choose a color and insert their discs into the grid", objective: "Form a horizontal, vertical, or diagonal line of four of your own discs", number_of_players: "2", reward_points: "50", genre: "Strategy", category_id: "1")
