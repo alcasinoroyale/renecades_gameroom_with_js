@@ -3,8 +3,10 @@ class Token < ApplicationRecord
   belongs_to :game
 
   def play_game
-    "user.reward_points" + "game.reward_points"
+    if @current_user
+    user.reward_points += game.reward_points
     user.save
-    "Thanks for playing #{game.name}!"
+    puts "Thanks for playing #{game.name}!"
+    end
   end
 end
