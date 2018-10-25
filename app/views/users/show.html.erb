@@ -10,8 +10,8 @@ Favorite Game: <%= @user.favorite_game %><br>
 Reward Points: <%= @user.reward_points %>
 
 <h4>My Game Achievements and Rewards</h4>
-<%= link_to "View Games", games_path %>
-
+<%= link_to "View Games", games_path %><br>
+<%= link_to "View Achievements", achievements_path %>
 <br>
 <h4>Renecades Players:</h4>
 <% @users.each do |user| %>
