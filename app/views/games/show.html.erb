@@ -7,7 +7,16 @@ Reward Points: <%= @game.reward_points %><br>
 Genre: <%= @game.genre %><br><br>
 
 <% if logged_in? %>
-<%= link_to "Play #{@game.name}" %>
+
+<%= form_for @token do |f| %>
+  <%= f.hidden_field :game_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.submit "Play this game" %>
+<% end %>
+
+
+
+<%= link_to "Play #{@game.name}", token_path %>
 <% elsif !logged_in? %>
 <%= link_to "Join Renecades and start playing", new_user_path %>
 <% end %>
