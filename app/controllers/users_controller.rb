@@ -7,8 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      flash[:message] = "User created successfully!"
       redirect_to user_path(@user)
     else
+      flash[:message] = "This user info already exists."
       render :new
     end
   end

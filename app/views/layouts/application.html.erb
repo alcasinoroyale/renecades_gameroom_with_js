@@ -10,13 +10,20 @@
   </head>
 
   <body>
+
+  <div>
+    <% if flash[:message] %>
+       <p><%= flash[:message] %></p>
+    <% end %>
+  </div>
+
     <header>
       <nav>
         <%= link_to "Home", root_path %><br>
-        <%= link_to "Renecades Games", games_path %><br>
         <% if !logged_in? %>
           <%= link_to "Login", '/login' %>
         <% elsif logged_in? %>
+          <%= link_to "Renecades Games", games_path %><br>
           <%= link_to "Profile Page", user_path(current_user) %><br>
           <%= link_to "Create a New Game", new_game_path %><br>
           <%= link_to "Gaming Categories", categories_path %><br>

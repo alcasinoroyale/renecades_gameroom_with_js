@@ -11,8 +11,10 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:user][:username])
        if @user && @user.authenticate(params[:user][:password])
          session[:user_id] = @user.id
+         flash[:message] = "Welcome Back to Renecades, #{@user.username}!"
          redirect_to user_path(@user)
        else
+         flash[:message] = "The username or password that you entered is incorrect."
          redirect_to 'welcome/home'
       end
   end
