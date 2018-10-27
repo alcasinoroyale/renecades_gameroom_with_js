@@ -12,3 +12,4 @@ skyrim = Game.create(name: "Skyrim", description: "The game's main story revolve
 
 table = Category.create(name: "Table Games")
 air_hockey = Game.create(name: "Air Hockey", description: "Players face off with paddles and a puck", objective: "First player to score 7 goals wins the game", number_of_players: "2", reward_points: "100", genre: "Sport", category_id: "3")
+foosball = Game.create(name: "Foosball", description: "Players control knobs to move the ball into the opponent's goal", objective: "First player to score 10 goals wins the game", number_of_players: "2", reward_points: "100", genre: "Sport", category_id: "3")

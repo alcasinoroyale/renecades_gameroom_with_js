@@ -26,3 +26,18 @@
   padding: 4px 16px;
   position: absolute;
 }
+
+a:link {
+  color: #4395AF;
+}
+a:visited {
+  color: #7D91A5;
+}
+a:hover {
+  color: #AB9418;
+}
+
+form input[type='text'] {
+  width: 150px;
+  height: 20px;
+}
