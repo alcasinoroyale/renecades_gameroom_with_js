@@ -1,4 +1,7 @@
-<h3> All the Games at Renecades </h3>
+<h1> All the Games at Renecades </h1>
+
+<p>Renecades hosts a threshold of board games, video games, and table games that you can play to get the best gaming experience. Come join the fun and start earning rewards for every game that you play. See what other gamers are playing and climb up the leaderboard!<p>
+
 <% @games.each do |game| %>
     <h4><%= link_to game.name, game_path(game) %></h4>
 <% end %>
