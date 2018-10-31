@@ -20,14 +20,17 @@ class SessionsController < ApplicationController
   end
 
   def facebook
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.username = auth['info']['username']
+    @user = User.find_or_create_by!(uid: auth['uid']) do |u|
+      u.username = auth['info']['name']
       u.email = auth['info']['email']
+      u.favorite_game = "Candy Crush"
+      u.bio = "Loves Playing Games"
+      u.reward_points = "30"
       u.password = 'password'
     end
     @user.save
     session[:user_id] = @user.id
-     render 'welcome/home'
+    redirect_to user_path(@user)
    end
 
   def destroy
