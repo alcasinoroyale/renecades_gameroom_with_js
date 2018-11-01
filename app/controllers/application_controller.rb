@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def all_users
+    @users = User.all.order("reward_points DESC")
+  end
 end
