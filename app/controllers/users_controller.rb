@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       flash[:message] = "User created successfully!"
       redirect_to user_path(@user)
     else
+      @user.errors.full_messages
       flash[:message] = "This user info already exists."
       render :new
     end

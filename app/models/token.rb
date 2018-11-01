@@ -7,6 +7,8 @@ class Token < ApplicationRecord
     self.user.update(
       :reward_points => new_reward_points
     )
+    #binding.pry
+    user.save
     "Thanks for playing #{self.game.name}!"
   end
 end
