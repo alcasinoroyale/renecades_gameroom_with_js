@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    #want to automatically update reward points each type a user plays a game
+  end
+
   private
 
   def user_params

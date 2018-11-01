@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
          redirect_to user_path(@user)
        else
          flash[:message] = "The username or password that you entered is incorrect."
-         redirect_to 'welcome/home'
+         redirect_to '/login'
       end
   end
 
