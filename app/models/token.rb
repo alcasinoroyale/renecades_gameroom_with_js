@@ -9,6 +9,6 @@ class Token < ApplicationRecord
     )
     #binding.pry
     user.save
-    "Thanks for playing #{self.game.name}!"
+    "Thanks for playing #{self.game.name}! You have earned #{self.game.reward_points} Reward Points!"
   end
 end
