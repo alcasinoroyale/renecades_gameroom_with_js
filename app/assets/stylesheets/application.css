@@ -14,9 +14,16 @@
  *= require_self
  */
 
+.footer{
+  height: 100px;
+  background-image: url(navimage.png);
+  background-size: 840px 190px
+}
+
+
  body {
       background: black;
-      color: #0E5A8E
+      color: #0E5A8E;
     }
 
 .button, input[type="submit" i]{
