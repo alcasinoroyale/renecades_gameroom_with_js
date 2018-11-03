@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
   def all_users
     @users = User.all.order("reward_points DESC")
   end
+
+  def all_games
+    @games = Game.all.order("name ASC")
+  end
 end
