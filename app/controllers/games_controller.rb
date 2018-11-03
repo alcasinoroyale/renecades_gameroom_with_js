@@ -9,6 +9,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    @game.creator = current_user
     @game.save
     flash[:message] = "#{@game.name} has been created successfully!"
     redirect_to game_path(@game)
@@ -41,6 +42,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :description, :objective, :number_of_players, :reward_points, :genre, :category_id)
+    params.require(:game).permit(:name, :description, :objective, :number_of_players, :reward_points, :creator_id, :genre, :category_id)
   end
 end

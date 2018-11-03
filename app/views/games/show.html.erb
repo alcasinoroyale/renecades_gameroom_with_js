@@ -12,11 +12,8 @@ Genre: <%= @game.genre %><br><br>
   <%= f.hidden_field :user_id %>
   <%= f.submit "Play this game" %>
 <% end %>
-
-<% elsif !logged_in? %>
-<%= link_to "Join Renecades and start playing", new_user_path %>
 <% end %>
 
 <br>
 <br>
-<%#link_to "Edit Game", edit_game_path(@game) if game.creator %>
+<%= link_to "Edit Game", edit_game_path(@game) if @game.creator %>
