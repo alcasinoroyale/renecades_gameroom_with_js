@@ -1,4 +1,4 @@
 <h1><%= @category.name %></h1>
 <% @category.games.each do |game| %>
-  <li><%= link_to game.name, game_path(game) %></li>
+  <h3><li><%= link_to game.name, game_path(game) %></li></h3>
 <% end %>

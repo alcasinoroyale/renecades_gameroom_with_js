@@ -1,13 +1,14 @@
-<h2>Renecades Leaderboard</h2>
+<h1>Renecades Leaderboard</h1>
 <ol>
 <% @users.each do |user| %>
-  <li><%= user.username %> - <%= user.rank %> - <%= user.reward_points %> Reward Points</li> <br>
+  <h3><li>Username: <%= user.username %></h3>
+  <h4>Rank: <%= user.rank %> - <%= user.reward_points %> Reward Points</li></h4>
 <% end %>
 </ol>
-<h2>Achievements</h2>
 
-Novice at Renecades - 625 Reward Points<br>
+<h1>Achievements</h1>
+<h3>Novice at Renecades - 625 Reward Points<br>
 Renecade Apprentice - 1250 Reward Points<br>
 Game Enthusiast - 2500 Reward Points<br>
 Strategy Master - 5000 Reward Points<br>
-King of Renecades - 10000 Reward Points
+King of Renecades - 10000 Reward Points</h3>

@@ -14,14 +14,26 @@
  *= require_self
  */
 
-.footer{
-  height: 100px;
-  background-image: url(navimage.png);
-  background-size: 840px 190px
+/* NAVIGATION */
+nav {
+  background: #5D052B;
+  background-image: url(wood.jpeg);
+  background-size: 840px 190px;
+  height: 50px;
 }
+
+nav a {
+    text-decoration: none;
+    padding: 4px 30px;
+    font-size: 28px;
+ }
 
 h1 {
   color: #A8C4C9;
+}
+
+h4 {
+  color: #A2BCD0;
 }
 
  body {
@@ -41,7 +53,7 @@ a:link {
   color: #4395AF;
 }
 a:visited {
-  color: #7D91A5;
+  color: #ACC7DA;
 }
 a:hover {
   color: #AB9418;
@@ -50,4 +62,10 @@ a:hover {
 form input[type='text'] {
   width: 150px;
   height: 20px;
+}
+
+.footer{
+  height: 100px;
+  background-image: url(navimage.png);
+  background-size: 840px 190px
 }

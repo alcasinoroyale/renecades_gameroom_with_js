@@ -1,16 +1,15 @@
-<h4><%= @user.username %>'s Profile</h4>
+<h2><%= @user.username %>'s Profile</h2>
 Bio: <%= @user.bio %><br>
 Favorite Game: <%= @user.favorite_game %><br>
 Reward Points: <%= @user.reward_points %>
 
-<h4>My Game Achievements</h4>
+<h3>Player Rank:</h3>
 
-<h3><%= @user.rank %></h3>
+<h4><%= @user.rank %></h4>
 
-<%= link_to "View Games", games_path %><br>
-<%= link_to "Renecades Leaderboard", achievements_path %>
-<br>
-<h4>Renecades Players:</h4>
+<h3>Renecades Players:</h3>
 <% @users.each do |user| %>
 <p><%= user.id %>. <%= user.username %></p>
 <% end %>
+
+<h4><%= link_to "Renecades Leaderboard", achievements_path %></h4>
