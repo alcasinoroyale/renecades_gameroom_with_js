@@ -1,7 +1,7 @@
 <h2>Renecades Leaderboard</h2>
 <ol>
 <% @users.each do |user| %>
-  <li><%= user.username %> - <%= user.reward_points %> Reward Points</li> <br>
+  <li><%= user.username %> - <%= user.rank %> - <%= user.reward_points %> Reward Points</li> <br>
 <% end %>
 </ol>
 <h2>Achievements</h2>

@@ -14,7 +14,6 @@ class GamesController < ApplicationController
     @game.save
     flash[:message] = "#{@game.name} has been created successfully!"
     redirect_to game_path(@game)
-    binding.pry
   end
 
   def edit
