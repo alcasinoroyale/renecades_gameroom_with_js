@@ -26,6 +26,7 @@ nav a {
     text-decoration: none;
     padding: 4px 30px;
     font-size: 28px;
+    float: left;
  }
 
 h1 {
@@ -62,6 +63,14 @@ a:hover {
 form input[type='text'] {
   width: 150px;
   height: 20px;
+}
+
+.style_image {
+  position: relative;
+  bottom: 300px;
+  left: 400px;
+  width: 550px;
+  height: 400px;
 }
 
 .footer{
