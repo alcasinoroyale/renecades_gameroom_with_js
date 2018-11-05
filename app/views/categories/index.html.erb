@@ -1,5 +1,9 @@
 <h2>Gaming Categories</h2>
 
+<%= image_tag("dice.png", height: "100", width: "100") %>
+<%= image_tag("game-console.png", height: "100", width: "100") %>
+<%= image_tag("ping-pong-bat.png", height: "100", width: "100") %>
+
 <ol>
 <% @category.each do |category| %>
   <li><h3><%= link_to category.name, category_path(category) %></h3></li>
