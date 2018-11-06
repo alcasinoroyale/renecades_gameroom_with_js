@@ -16,8 +16,7 @@
 
 /* NAVIGATION */
 nav {
-  background: #5D052B;
-  background-image: url(wood.jpeg);
+  background: #317E94;
   background-size: 840px 190px;
   height: 50px;
 }
@@ -25,22 +24,27 @@ nav {
 nav a {
     text-decoration: none;
     padding: 4px 30px;
-    font-size: 28px;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
     float: left;
  }
 
 h1 {
   color: #A8C4C9;
+  font-family: sans-serif;
 }
 
 h4 {
   color: #A2BCD0;
+  font-family: sans-serif;
 }
 
- body {
-      background: black;
-      color: #0E5A8E;
-    }
+body {
+    background: black;
+    color: #66B3CA;
+    font-family: sans-serif;
+}
 
 .button, input[type="submit" i]{
   color: #fff;
@@ -51,10 +55,10 @@ h4 {
 }
 
 a:link {
-  color: #4395AF;
+  color: #DDEEF3;
 }
 a:visited {
-  color: #ACC7DA;
+  color: #DDEEF3;
 }
 a:hover {
   color: #AB9418;
@@ -65,15 +69,50 @@ form input[type='text'] {
   height: 20px;
 }
 
+.renecades {
+  font-size: 44px;
+  font-family: sans-serif;
+  color: #87DAF2;
+  padding: 4px 40px;
+  font-weight: bold;
+}
+
+.graphic {
+  position: relative;
+  left: 100px;
+}
+
+.slogans {
+  float: left;
+  font-family: sans-serif;
+  font-size: 24px;
+  padding: 10px 40px;
+  font-weight: bold;
+  color: #E1F1F3;
+}
+
+.home-links {
+  float: left;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.rank {
+  color: #DDEEF3;
+  font-size: 20px;
+}
+
 .style_image {
   position: relative;
-  bottom: 300px;
-  left: 400px;
+  bottom: 360px;
+  left: 600px;
   width: 550px;
   height: 400px;
 }
 
 .footer{
+  position: relative;
+  bottom: -100px;
   height: 100px;
   background-image: url(navimage.png);
   background-size: 840px 190px
