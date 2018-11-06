@@ -72,7 +72,7 @@ form input[type='text'] {
 .renecades {
   font-size: 48px;
   font-family: sans-serif;
-  color: #E1F1F3;
+  color: #69D1F0;
   padding: 10px 40px;
   position: absolute;
   left: 20px;
@@ -82,7 +82,7 @@ form input[type='text'] {
 
 .graphic {
   position: absolute;
-  right: 30px;
+  right: 10px;
   top: 200px;
 }
 
@@ -95,8 +95,8 @@ form input[type='text'] {
   color: #E1F1F3;
   letter-spacing: 2px;
   text-transform: uppercase;
-  position: relative;
-  top: 100px;
+  position: absolute;
+  top: 250px;
   left: 20px;
 }
 
