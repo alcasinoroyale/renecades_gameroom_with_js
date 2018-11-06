@@ -35,6 +35,11 @@ h1 {
   font-family: sans-serif;
 }
 
+h2 {
+  color: #A8C4C9;
+  font-family: sans-serif;
+}
+
 h4 {
   color: #A2BCD0;
   font-family: sans-serif;
@@ -103,7 +108,10 @@ form input[type='text'] {
 .home-links {
   float: left;
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+  position: absolute;
+  bottom: 200px;
+  left: 60px;
 }
 
 .rank {
