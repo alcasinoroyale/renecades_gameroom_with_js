@@ -1,7 +1,7 @@
 # Renecades Game Room
 
 ## Description
-Renecades is a rails app that allows users to create their own exclusive gaming profiles and earn rewards and achievements by playing the variety of games with their tokens. Users can also create their own games for the Renecades Gameroom and share them with the gaming community. Users can also write reviews for each specific game that they play.
+Renecades is a rails app that allows users to create their own exclusive gaming profiles and earn rewards and achievements by playing the variety of games with their tokens. Users can also create their own games for the Renecades Gameroom and share them with the gaming community. They can also climb the leaderboard for every rank that they unlock.
 
 ## Installation and Usage
 1. Clone this repository to your computer by copying the HTTPS link and placing it in your terminal using the command "git clone" with the link attached.
@@ -11,7 +11,7 @@ Renecades is a rails app that allows users to create their own exclusive gaming 
 5. Type "rails db:seed" to add Renecades' existing profiles, categories, and games.
 6. Use the command "rails s" to launch the app through your web browser.
 7. Navigate to the specific IP address or localhost:3000 in your browser to get started.
-8. Signup and start playing or login through Facebook. 
+8. Signup and start playing or login through Facebook.
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/alcasinoroyale/renecades_gameroom. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.
