@@ -9,6 +9,11 @@ Reward Points: <%= @user.reward_points %></h3>
 <%= @user.rank %>
 </div>
 
+<h2>Games Created By: <% @user.username %></h2>
+<% @user.games.each do |game| %>
+  <h3><%= link_to game.name, game_path(game) %></h3>
+  <% end %>
+
 <h2>Renecades Players:</h2>
 <% @users.each do |user| %>
 <h3><%= user.id %>. <%= user.username %></h3>

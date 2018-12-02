@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    all_games
     @users = User.all
     if logged_in?
       @user = User.find_by(id: params[:id])
