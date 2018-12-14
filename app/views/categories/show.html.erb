@@ -1,4 +1,8 @@
 <h1><%= @category.name %></h1>
 <% @category.games.each do |game| %>
-  <h3><li><%= link_to game.name, game_path(game) %></li></h3>
+  <h3><li><%= link_to game.name,  category_game_path(@category, game) %></li></h3>
 <% end %>
+
+<% @category.users.each do |user| %>
+Created By: <%= user.username %><br>
+  <% end %>
