@@ -1,3 +1,19 @@
+<% if @game.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@game.errors.count, "error") %>
+      prohibited this game from being saved:
+    </h2>
+
+    <ul>
+    <% @game.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <h2>Create a New Game</h2>
 <%= form_for @game do |f| %>
 
@@ -20,15 +36,7 @@
  <%= f.text_field :genre %><br><br>
 
  <%= f.label :category_id, "Gaming Category:" %><br>
-  1 - "Board Games"
- <br>
-  2 - "Video Games"
- <br>
-  3 - "Table Games"
- <br>
- <br>
-
- <%= f.text_field :category_id %><br>
+ <%= f.collection_select :category_id, Category.all, :id, :name %><br><br>
 
  <br>
 
