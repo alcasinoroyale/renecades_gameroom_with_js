@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+      @user.reward_points = "0"
     if @user.save
       session[:user_id] = @user.id
       flash[:message] = "User created successfully!"
