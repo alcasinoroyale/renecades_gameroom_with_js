@@ -9,6 +9,14 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, presence: true, allow_nil: true
 
+  def self.most_active
+    order("reward_points desc").first.username
+  end
+
+  def self.longest_username
+    order("length (username) desc").first.username
+  end
+
   def rank
     if self.reward_points.between? 0, 100
       self.rank = "Novice"
@@ -24,4 +32,5 @@ class User < ApplicationRecord
       self.rank = "King of Renecades"
     end
   end
+
 end
