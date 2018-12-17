@@ -2,7 +2,5 @@
 <% @category.games.each do |game| %>
   <h3><li><%= link_to game.name,  category_game_path(@category, game) %></li></h3>
 <% end %>
-
-<% @category.users.each do |user| %>
-Created By: <%= user.username %><br>
-  <% end %>
+<br>
+<%= link_to "Create More #{@category.name}", new_category_game_path(@category, @game) %>

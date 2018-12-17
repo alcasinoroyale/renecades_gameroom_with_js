@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   resources :users, only: [:new, :create, :show]
 
-  resources :categories, only: [:index, :show] do
+  resources :categories, only: [:index, :show, :new, :create] do
     resources :games
   end
 
