@@ -4,7 +4,7 @@
 Join the fun and start earning rewards for every game that you play.<br>
 See what other gamers are playing and climb up the leaderboard!<p>
 
-<% @games.each do |game| %>
+<% @games.all_games.each do |game| %>
     <h3><%= link_to game.name, game_path(game) %></h3>
 <% end %>
 

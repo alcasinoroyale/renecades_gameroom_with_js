@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    all_games
     @users = User.all
     if logged_in?
       @user = User.find_by(id: params[:id])
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    #want to automatically update reward points each type a user plays a game
   end
 
   private

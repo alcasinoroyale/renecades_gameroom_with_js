@@ -20,5 +20,5 @@ Reward Points: <%= @user.reward_points %></h3>
 
 <h2>Renecades Players:</h2>
 <% @users.each do |user| %>
-<h3><%= user.id %>. <%= user.username %></h3>
+<h3><%= user.id %>. <%= link_to user.username, user_path(user) %></h3>
 <% end %>
