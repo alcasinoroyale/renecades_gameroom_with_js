@@ -27,10 +27,10 @@
  <%= f.text_field :objective %><br><br>
 
  <%= f.label :number_of_players, "# of Players:" %><br>
- <%= f.text_field :number_of_players %><br><br>
+ <%= f.number_field :number_of_players, max: 10 %><br><br>
 
  <%= f.label :reward_points, "# of Reward Points:" %><br>
- <%= f.text_field :reward_points %><br><br>
+ <%= f.number_field :reward_points, max: 100 %><br><br>
 
  <%= f.label :genre, "Game Genre:" %><br>
  <%= f.text_field :genre %><br><br>

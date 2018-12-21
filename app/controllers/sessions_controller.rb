@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
       u.email = auth['info']['email']
       u.favorite_game = "Candy Crush"
       u.bio = "Loves Playing Games"
-      u.reward_points = "30"
+      u.reward_points = "0"
       u.password = 'password'
     end
     @user.save
