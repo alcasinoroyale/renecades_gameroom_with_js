@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   scope :most_active, -> { order(reward_points: :desc).first.username }
   scope :all_users, -> { order(reward_points: :desc)}
+  scope :longest_username, -> { order("length (username) desc").first.username }
 
   def rank
     if self.reward_points.between? 0, 100
