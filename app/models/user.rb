@@ -9,13 +9,8 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, presence: true, allow_nil: true
 
-  def self.most_active
-    order("reward_points desc").first.username
-  end
-
-  def self.longest_username
-    order("length (username) desc").first.username
-  end
+  scope :most_active, -> { order(reward_points: :desc).first.username }
+  scope :all_users, -> { order(reward_points: :desc)}
 
   def rank
     if self.reward_points.between? 0, 100
