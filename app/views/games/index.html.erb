@@ -4,8 +4,14 @@
 Join the fun and start earning rewards for every game that you play.<br>
 See what other gamers are playing and climb up the leaderboard!<p>
 
-<% @games.all_games.each do |game| %>
+<% @games.each do |game| %>
     <h3><%= link_to game.name, game_path(game) %></h3>
+    <p><%= game.reward_points %> Reward Points</p>
+<% end %>
+
+<%= form_tag "/games", method: "get" do %>
+  <%= select_tag 'order_by', options_for_select(["Alphabetical", "Reward Points"]), include_blank: true %><br><br>
+  <%= submit_tag "Order Games" %>
 <% end %>
 
 <%= image_tag("renecades.jpg", :class => "style_image")  %>

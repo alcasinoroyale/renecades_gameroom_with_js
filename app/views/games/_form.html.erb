@@ -36,7 +36,7 @@
  <%= f.text_field :genre %><br><br>
 
  <%= f.label :category_id, "Gaming Category:" %><br>
- <%= f.collection_select :category_id, Category.all, :id, :name %><br><br>
+ <%= f.collection_select :category_id, Category.all, :id, :name, selected: @category.id %><br><br>
 
  <br>
 

@@ -1,10 +1,20 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
+    if(params[:order_by]=="Alphabetical")
+      @games = Game.all_games
+    elsif(params[:order_by]=="Reward Points")
+      @games = Game.order_by_rp
+    end
   end
 
   def new
     @game = Game.new
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+    else
+      @category = Category.first
+    end
   end
 
   def create
