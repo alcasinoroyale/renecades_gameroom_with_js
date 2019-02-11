@@ -10,8 +10,8 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_nil: true
 
   scope :most_active, -> { order(reward_points: :desc).first.username }
+  scope :longest_username, -> { order("LENGTH(username) DESC").first.username }
   scope :all_users, -> { order(reward_points: :desc)}
-  scope :longest_username, -> { order("length (username) desc").first.username }
 
   def rank
     if self.reward_points.between? 0, 100

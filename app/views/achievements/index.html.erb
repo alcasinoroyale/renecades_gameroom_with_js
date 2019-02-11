@@ -1,23 +1,8 @@
-<h2>Renecades Leaderboard</h2>
-
-<ol>
-<% @users.each do |user| %>
-  <h3><li>Username: <%= user.username %></h3>
-  <h4>Rank: <%= user.rank %> - <%= user.reward_points %> Reward Points</li></h4>
-  <h4>Games Played: <%= user.games.count %></h4>
-<% end %>
-</ol>
-
-<h2>Ranks</h2>
-<h4>Novice = 0 - 100 Reward Points<br>
-Apprentice = 100 - 300 Reward Points<br>
-Game Enthusiast = 300 - 600 Reward Points<br>
-Game Crusher = 600 - 1000 Reward Points<br>
-Strategy Master = 1000 - 1500 Reward Points<br>
-King of Renecades = 1500 - 2100 Reward Points</h4>
-
-<h3>Most Active User:</h3>
-<h4><%= @users.most_active %></h4>
-
-<h3>Longest Username:</h3>
-<h4><%= @users.longest_username %></h4>
+<h2>Renecades Ranks</h2>
+<th>
+<h4>Novice: 0 - 100 Reward Points<br>
+Apprentice: 100 - 300 Reward Points<br>
+Game Enthusiast:  300 - 600 Reward Points<br>
+Game Crusher:  600 - 1000 Reward Points<br>
+Strategy Master: 1000 - 1500 Reward Points<br>
+King of Renecades: 1500 - 2100 Reward Points</h4></th>

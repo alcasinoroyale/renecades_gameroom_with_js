@@ -1,0 +1,17 @@
+<h2>Renecades Leaderboard</h2>
+
+<ol>
+<% @users.each do |user| %>
+  <h3><li>Username: <%= user.username %></h3>
+  <h4>Rank: <%= user.rank %> - <%= user.reward_points %> Reward Points</li></h4>
+  <h4>Games Played: <%= user.games.count %></h4>
+<% end %>
+</ol>
+
+<h3>Most Active User:</h3>
+<h4><%= @users.most_active %></h4>
+
+<h3>Longest Username:</h3>
+<h4><%= @users.longest_username %></h4>
+
+<h3><%= link_to "View Reneacades Players and Ranks", achievements_path %><h3>

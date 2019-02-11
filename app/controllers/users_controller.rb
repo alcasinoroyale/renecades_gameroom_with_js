@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all
+  end
+
   def show
     @users = User.all
     if logged_in?
