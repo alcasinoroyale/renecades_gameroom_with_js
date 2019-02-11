@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   end
 
   resources :achievements, only: [:index]
-  resources :games
+
+  resources :games do
+    resources :reviews
+  end
+  
   resources :tokens
   resources :sessions, only: [:new, :create, :destroy]
 

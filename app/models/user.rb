@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :games, through: :tokens
   has_many :created_games, class_name: "Game", foreign_key: "creator_id"
   has_many :categories, through: :created_games
+  has_many :reviews
 
   validates :username, :email, :bio, :favorite_game, :reward_points, presence: true
   validates :username, :email, uniqueness: true
