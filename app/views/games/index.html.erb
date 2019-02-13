@@ -15,3 +15,10 @@ See what other gamers are playing and climb up the leaderboard!<p>
 <% end %>
 
 <%= image_tag("renecades.jpg", :class => "style_image")  %>
+
+<div>
+<% @games.each do |game| %><br>
+  <button class="js-more" data-id="<%= game.id %>"><%= game.name %></button>
+  <div id="game-<%= game.id %>"></div>
+<% end %>
+</div>
