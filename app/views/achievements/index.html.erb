@@ -29,3 +29,20 @@
       <td>1500 - 2100</td>
   </tr>
 </table>
+
+<h2>Renecades Players</h2>
+<table border="1" style="width: 30%;">
+  <tr>
+      <th>Username</th>
+      <th>Rank</th>
+      <th>Reward Points</th>
+  <tr>
+<% @users.each do |user| %>
+<tr>
+<td><h3><%= user.id %>. <%= link_to user.username, user_path(user) %></h3></td>
+<td><h3><%= user.rank %></h3></td>
+<td><h3><%= user.reward_points %></h3></td>
+</tr>
+
+<% end %>
+</table>
