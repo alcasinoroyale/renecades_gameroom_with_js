@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def all_users
-    @users = User.all.order("reward_points DESC")
+  def all_players
+    @users = User.all
   end
 end

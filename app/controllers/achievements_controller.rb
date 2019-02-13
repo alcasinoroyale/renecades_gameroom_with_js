@@ -1,5 +1,5 @@
 class AchievementsController < ApplicationController
   def index
-    all_users
+    all_players
   end
 end
