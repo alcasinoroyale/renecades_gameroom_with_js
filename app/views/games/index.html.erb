@@ -17,8 +17,18 @@ See what other gamers are playing and climb up the leaderboard!<p>
 <%= image_tag("renecades.jpg", :class => "style_image")  %>
 
 <div>
-<% @games.each do |game| %><br>
-  <button class="js-more" data-id="<%= game.id %>"><%= game.name %></button>
-  <div id="game-<%= game.id %>"></div>
+<% @games.each do |game| %>
+  <div id="game-<%= game.id %>"></div><br>
+  <button class="js-more-" data-id="<%= game.id %>"><%= game.name %></button>
 <% end %>
 </div>
+
+<script>
+	$(".js-more").on("click", function() {
+		   var id = $(this).data("id");
+			$.get("/games/" + id + ".json", function(g) {
+				var moreInfo = "<h3>" + g["name"] + "</h3>" + g["reward_points"] + "<a href='/games/" + id +"'>All Game Info</a>"
+				$("#game-" + id).html(moreInfo);
+		})
+	});
+</script>
