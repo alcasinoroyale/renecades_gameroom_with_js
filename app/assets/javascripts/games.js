@@ -1,18 +1,20 @@
 class Game {
-  constructor(id, name, description, objective, number_of_players, reward_points, creator_id, category_id, genre) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-    this.objective = objective;
-    this.number_of_players = number_of_players;
-    this.reward_points = reward_points;
-    this.creator_id = creator_id;
-    this.category_id = category_id;
-    this.genre = genre;
+  constructor(attr) {
+    this.game.id = attr.game.id;
+    this.name = attr.name;
+    this.description = attr.description;
+    this.objective = attr.objective;
+    this.number_of_players = attr.number_of_players;
+    this.reward_points = attr.reward_points;
+    this.creator_id = attr.creator_id;
+    this.category_id = attr.category_id;
+    this.genre = attr.genre;
+  };
 };
 
 function nextGame(){
-  $(".js-nextgame").on("click", function() {
+  $(".js-nextgame").on("click", function(e) {
+    e.preventDefault();
     const nextId = $(this).data("id") + 1;
     $.get("/games" + nextId + ".json", function(data){
       const game = data;
@@ -24,5 +26,5 @@ function nextGame(){
       $(".gameGenre").text(game["genre"]);
       $(".js-nextgame").attr("data-id", game["id"]);
     });
-    });
   });
+});

@@ -18,3 +18,7 @@ Genre: <%= @game.genre %><br><br>
 <br>
 <br>
 <%= link_to "Edit Game", edit_game_path(@game) if @game.creator_id == @current_user.id %>
+
+<div>
+  <a class=".js-nextgame">Next Game </a>
+</div>
