@@ -23,7 +23,13 @@ Genre: <%= @game.genre %><br><br>
   <button class-"js-nextgame" data-id="<%= @game.id %>">Next Game</button>
 </div>
 
-<script>
+<script type="text/javascript" charset="utf-8">
+function Game(id, name, description, objective, number_of_players, reward_points, genre){
+  this.id = id;
+  this.name = name
+};
+
+$(function() {
   $(".js-nextgame").on("click", function() {
     const nextId = $(this).data("id") + 1;
     $.get("/games" + nextId + ".json", function(data){
@@ -31,7 +37,9 @@ Genre: <%= @game.genre %><br><br>
       $(".gameName").text(game["name"]);
       $(".gameDescription").text(game["description"]);
       $(".gameObjective").text(game["objective"]);
+      $(".gameNumberOfPlayers").text(game["number_of_players"]);
       $(".gameRewardPoints").text(game["reward_points"]);
+      $(".gameGenre").text(game["genre"]);
       $(".js-nextgame").attr("data-id", game["id"]);
     });
     });
