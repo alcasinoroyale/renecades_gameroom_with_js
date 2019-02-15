@@ -27,7 +27,13 @@ Genre: <%= @game.genre %><br><br>
   $(".js-nextgame").on("click", function() {
     const nextId = $(this).data("id") + 1;
     $.get("/games" + nextId + ".json", function(data){
-      const nextGame = data;
+      const game = data;
+      $(".gameName").text(game["name"]);
+      $(".gameDescription").text(game["description"]);
+      $(".gameObjective").text(game["objective"]);
+      $(".gameRewardPoints").text(game["reward_points"]);
+      $(".js-nextgame").attr("data-id", game["id"]);
+    });
     });
   });
 </script>
