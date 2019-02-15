@@ -20,10 +20,14 @@ Genre: <%= @game.genre %><br><br>
 <%= link_to "Edit Game", edit_game_path(@game) if @game.creator_id == @current_user.id %>
 
 <div>
-  <button class-"js-nextgame" data-id="<%= game.id %>">Next Game</button>
+  <button class-"js-nextgame" data-id="<%= @game.id %>">Next Game</button>
 </div>
 
 <script>
   $(".js-nextgame").on("click", function() {
-  });    
+    const nextId = $(this).data("id") + 1;
+    $.get("/games" + nextId + ".json", function(data){
+      const nextGame = data;
+    });
+  });
 </script>
