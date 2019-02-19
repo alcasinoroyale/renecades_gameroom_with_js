@@ -15,7 +15,7 @@ class Game {
 function nextGame(){
   $("nextGame").on("click", 'nextGame', function(e) {
     e.preventDefault();
-    const nextId = $(this).data("id") + 1;    
+    const nextId = $(this).data("id") + 1;
     $.get("/games" + nextId + ".json", function(data){
       const game = data;
       $(".gameName").text(game["name"]);

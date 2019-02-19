@@ -10,11 +10,13 @@ See what other gamers are playing and climb up the leaderboard!<p>
 <% end %>
 
 <%= form_tag "/games", method: "get" do %>
-  <%= select_tag 'order_by', options_for_select(["Alphabetical", "Reward Points"]), include_blank: true %><br><br>
+  <%= select_tag 'order_by', options_for_select(["Alphabetical", "Reward Points"]),
+  include_blank: true, id: "order_select"%><br><br>
   <%= submit_tag "Order Games" %>
 <% end %>
 
 <%= image_tag("renecades.jpg", :class => "style_image")  %>
+
 
 <div>
 <% @games.each do |game| %>

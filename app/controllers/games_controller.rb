@@ -1,14 +1,14 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
-      respond_to do |format|
-        format.html {render :index}
-        format.json {render json: @games}
-      end
     if(params[:order_by]=="Alphabetical")
       @games = Game.all_games
     elsif(params[:order_by]=="Reward Points")
       @games = Game.order_by_rp
+    end
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @games}
     end
   end
 
@@ -49,10 +49,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @current_user = current_user
     @token = @game.tokens.build(user_id:current_user.id)
-      respond_to do |format|
-        format.html {render :show}
-        format.json {render json: @game}
-      end
+    render json: @game, status: 200
   end
 
   def destroy
