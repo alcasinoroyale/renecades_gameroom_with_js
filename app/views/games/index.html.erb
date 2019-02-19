@@ -25,7 +25,7 @@ See what other gamers are playing and climb up the leaderboard!<p>
 <% end %>
 </div>
 
-<script>
+<script type="text/javascript">
 	$(".js-more").on("click", function() {
 		   const id = $(this).data("id");
 		$.get("/games/" + id + ".json", function(g) {
