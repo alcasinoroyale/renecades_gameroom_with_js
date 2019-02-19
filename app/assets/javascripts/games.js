@@ -1,3 +1,10 @@
+$(document).on(function() {
+  $('order_select').on('change', function(event) {
+    console.log(event);
+  });
+})
+
+
 class Game {
   constructor(attr) {
     this.game.id = attr.game.id;

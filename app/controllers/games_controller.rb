@@ -49,7 +49,10 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @current_user = current_user
     @token = @game.tokens.build(user_id:current_user.id)
-    render json: @game, status: 200
+      respond_to do |format|
+        format.html {render :show}
+        format.json {render json: @game}
+      end
   end
 
   def destroy

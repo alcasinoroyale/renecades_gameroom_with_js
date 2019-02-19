@@ -20,5 +20,4 @@
 //= require games
 
 $(document).ready(function() {
-  alert("Hello World!");
 });
