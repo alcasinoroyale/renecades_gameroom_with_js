@@ -22,3 +22,6 @@ Genre: <%= @game.genre %><br><br>
 <div>
   <button class="nextGame" id="nextGame" >Next Game </button>
 </div>
+
+<br><%= link_to "Write Review", new_game_review_path(@game) %><br>
+<br><%= link_to "See Reviews", game_reviews_path(@game) %>
