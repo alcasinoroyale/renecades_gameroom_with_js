@@ -4,7 +4,6 @@ $(document).on(function() {
   });
 })
 
-
 class Game {
   constructor(attr) {
     this.game.id = attr.game.id;
@@ -19,20 +18,21 @@ class Game {
   };
 };
 
-function nextGame(){
-  $("nextGame").on("click", 'nextGame', function(e) {
-    e.preventDefault();
-    const nextId = $(this).data("id") + 1;
-    $.get("/games" + nextId + ".json", function(data){
+document.getElementById("nextGame").addEventListener("click, nextGame");
+
+  function nextGame(){
+    $("nextGame").on("click", 'nextGame', function(e) {
+      e.preventDefault();
+      const nextId = $(this).data("id") + 1;
+        $.get("/games" + nextId + ".json", function(data){
       const game = data;
-      $(".gameName").text(game["name"]);
-      $(".gameDescription").text(game["description"]);
-      $(".gameObjective").text(game["objective"]);
-      $(".gameNumberOfPlayers").text(game["number_of_players"]);
-      $(".gameRewardPoints").text(game["reward_points"]);
-      $(".gameGenre").text(game["genre"]);
-      $("nextGame").attr("data-id", game["id"]);
-      debugger
+        $(".gameName").text(game["name"]);
+        $(".gameDescription").text(game["description"]);
+        $(".gameObjective").text(game["objective"]);
+        $(".gameNumberOfPlayers").text(game["number_of_players"]);
+        $(".gameRewardPoints").text(game["reward_points"]);
+        $(".gameGenre").text(game["genre"]);
+        $("nextGame").attr("data-id", game["id"]);
     });
   });
 });

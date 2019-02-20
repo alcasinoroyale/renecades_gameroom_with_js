@@ -20,4 +20,5 @@
 //= require games
 
 $(document).ready(function() {
+  alert("Working?")
 });
