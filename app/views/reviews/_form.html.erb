@@ -1,4 +1,13 @@
 <h2>Create New Review</h2>
 
-<%= form_for ([@game, @game.reviews.build]) do |f| %>
+<%= form_for ([@game, @review]) do |f| %>
+
+<%= f.label :title, "Title:" %><br>
+<%= f.text_field :title %><br><br>
+
+<%= f.label :content, "Content:" %><br>
+<%= f.text_area :content %><br><br>
+
+<br><%= f.submit %>
+
 <% end %>
