@@ -20,6 +20,8 @@ See what other gamers are playing and climb up the leaderboard!<p>
 <%= image_tag("renecades.jpg", :class => "style_image")  %>
 
 
+
+<% #Loading Games Index with JS" %>
 <div>
 <% @games.each do |game| %>
   <div id="game-<%= game.id %>"></div><br>

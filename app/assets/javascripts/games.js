@@ -1,6 +1,6 @@
 // Render Order Games Function using JS
 $(function() {
-  addListener()
+  nextGame()
   console.log("games.js");
   $('order_select').on('change', function(event) {
     console.log(event);
@@ -19,20 +19,18 @@ class Game {
     this.creator_id = attr.creator_id;
     this.category_id = attr.category_id;
     this.genre = attr.genre;
+    debugger;
   };
 };
 
 // Feature Button to jump to Next Game
-function addListener() {
+function nextGame() {
   console.log("addListener")
-  // document.getElementById("nextGame").addEventListener("click", nextGame());
   $('button.nextGame').on("click", function(e){
     e.preventDefault();
-
-    const nextId = $(this).data("id") + 1;
-    debugger;
-      $.get(`/games${nextId}.json`, function(data){
-    const game = data;
+    let nextId = parseInt($("button.nextGame").attr("data-id")) + 1;
+      $.get(`/games/${nextId}.json`, function(data){
+    let game = data;
       $(".gameName").text(game["name"]);
       $(".gameDescription").text(game["description"]);
       $(".gameObjective").text(game["objective"]);
@@ -40,6 +38,6 @@ function addListener() {
       $(".gameRewardPoints").text(game["reward_points"]);
       $(".gameGenre").text(game["genre"]);
       $("nextGame").attr("data-id", game["id"]);
+    });
   });
-});
 }
