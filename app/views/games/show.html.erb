@@ -20,7 +20,7 @@ Genre: <%= @game.genre %><br><br>
 <%= link_to "Edit Game", edit_game_path(@game) if @game.creator_id == @current_user.id %>
 
 <div>
-  <button class="nextGame" id="nextGame" >Next Game </button>
+  <button class="nextGame" id: <% @game.id %> >Next Game </button>
 </div>
 
 <br><%= link_to "Write Review", new_game_review_path(@game, @review) %><br>

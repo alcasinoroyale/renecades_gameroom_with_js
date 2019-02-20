@@ -1,12 +1,16 @@
-$(document).on(function() {
+// Render Order Games Function using JS
+$(function() {
+  addListener()
+  console.log("games.js");
   $('order_select').on('change', function(event) {
     console.log(event);
   });
 })
 
+//Render Create a Game Form
 class Game {
   constructor(attr) {
-    this.game.id = attr.game.id;
+    this.id = attr.id;
     this.name = attr.name;
     this.description = attr.description;
     this.objective = attr.objective;
@@ -18,21 +22,24 @@ class Game {
   };
 };
 
-document.getElementById("nextGame").addEventListener("click, nextGame");
+// Feature Button to jump to Next Game
+function addListener() {
+  console.log("addListener")
+  // document.getElementById("nextGame").addEventListener("click", nextGame());
+  $('button.nextGame').on("click", function(e){
+    e.preventDefault();
 
-  function nextGame(){
-    $("nextGame").on("click", 'nextGame', function(e) {
-      e.preventDefault();
-      const nextId = $(this).data("id") + 1;
-        $.get("/games" + nextId + ".json", function(data){
-      const game = data;
-        $(".gameName").text(game["name"]);
-        $(".gameDescription").text(game["description"]);
-        $(".gameObjective").text(game["objective"]);
-        $(".gameNumberOfPlayers").text(game["number_of_players"]);
-        $(".gameRewardPoints").text(game["reward_points"]);
-        $(".gameGenre").text(game["genre"]);
-        $("nextGame").attr("data-id", game["id"]);
-    });
+    const nextId = $(this).data("id") + 1;
+    debugger;
+      $.get(`/games${nextId}.json`, function(data){
+    const game = data;
+      $(".gameName").text(game["name"]);
+      $(".gameDescription").text(game["description"]);
+      $(".gameObjective").text(game["objective"]);
+      $(".gameNumberOfPlayers").text(game["number_of_players"]);
+      $(".gameRewardPoints").text(game["reward_points"]);
+      $(".gameGenre").text(game["genre"]);
+      $("nextGame").attr("data-id", game["id"]);
   });
 });
+}
