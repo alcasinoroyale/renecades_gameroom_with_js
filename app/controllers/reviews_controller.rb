@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action { @game = Game.find(params[:game_id])}
 
   def index
     @reviews = Review.all
@@ -6,17 +7,11 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    if params[:game_id]
-      @game = Game.find(params[:game_id])
-    else
-      @game = Game.first
-    end
   end
 
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    binding.pry
     @review.game_id = @game.id
 
     if @review.save
