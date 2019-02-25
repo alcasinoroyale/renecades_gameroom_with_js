@@ -6,6 +6,14 @@ $(document).ready(function() {
 //Render Games Index with JS
 function loadGames() {
   console.log("all-games")
+  $.ajax({
+    url: 'http://localhost:3000/games',
+    method: 'GET',
+    dataType: 'json',
+    success: function(response) {
+      $("all-games")
+    }
+  })
 }
 
 //Render Create a Game Form
