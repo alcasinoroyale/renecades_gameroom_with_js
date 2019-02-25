@@ -16,3 +16,5 @@ grand_theft_auto_V = Game.create(name: "Grand Theft Auto V", description: "Takes
 table = Category.create(name: "Table Games")
 air_hockey = Game.create(name: "Air Hockey", description: "Players face off with paddles and a puck.", objective: "The first player to score 7 goals wins the game.", number_of_players: "2", reward_points: "60", genre: "Sport", category_id: "3", creator_id: 4)
 foosball = Game.create(name: "Foosball", description: "Players control knobs to move the ball into the opponent's goal.", objective: "The First player to score 10 goals wins the game.", number_of_players: "2", reward_points: "60", genre: "Sport", category_id: "3", creator_id: 2)
+
+review_1 = Review.create(title: "Geralt's Review of Connect Four", content: "Connect Four is an awesome game. I would definitely recommend.", game_id: 1, user_id: 1)

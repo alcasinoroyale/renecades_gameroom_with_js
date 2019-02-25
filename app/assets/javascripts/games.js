@@ -1,11 +1,12 @@
-// Render Order Games Function using JS
-$(function() {
+$(document).ready(function() {
+  loadGames()
   nextGame()
-  console.log("games.js");
-  $('order_select').on('change', function(event) {
-    console.log(event);
-  });
 })
+
+//Render Games Index with JS
+function loadGames() {
+  console.log("all-games")
+}
 
 //Render Create a Game Form
 class Game {
@@ -19,9 +20,13 @@ class Game {
     this.creator_id = attr.creator_id;
     this.category_id = attr.category_id;
     this.genre = attr.genre;
-    debugger;
   };
 };
+
+// Render Order Games Function using JS
+$('order_select').on('change', function(event) {
+    console.log(event);
+});
 
 // Feature Button to jump to Next Game
 function nextGame() {
