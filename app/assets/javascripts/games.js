@@ -1,9 +1,10 @@
 $(document).ready(function() {
   loadGames()
+  displayGame()
   nextGame()
 })
 
-//Render Games Index with JS
+// Render Games Index with JS //
 function loadGames() {
   console.log("all-games")
   $.ajax({
@@ -16,7 +17,12 @@ function loadGames() {
   })
 }
 
-//Render Create a Game Form
+// Render Show Page for Each Game //
+function displayGame() {
+  console.log("Show Game Users")
+}
+
+// Render Create a Game Form //
 class Game {
   constructor(attr) {
     this.id = attr.id;
@@ -31,12 +37,12 @@ class Game {
   };
 };
 
-// Render Order Games Function using JS
+// Render Order Games Function using JS //
 $('order_select').on('change', function(event) {
     console.log(event);
 });
 
-// Feature Button to jump to Next Game
+// Feature Button to jump to Next Game //
 function nextGame() {
   console.log("addListener")
   $('button.nextGame').on("click", function(e){
