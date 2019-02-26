@@ -1,6 +1,7 @@
 $(document).ready(function() {
   loadGames()
   displayGame()
+  appendGames()
   nextGame()
 })
 
@@ -12,7 +13,6 @@ function loadGames() {
     method: 'GET',
     dataType: 'json',
     success: function(response) {
-      $("all-games")
     }
   })
 }
@@ -26,6 +26,11 @@ function displayGame() {
             $("#game-" + id).html(moreInfo);
     })
   });
+}
+
+// Iterate All Games and Append Them to the DOM //
+function appendGames(){
+  $("h4").append($('.all-games').html());
 }
 
 // Render Create a Game Form //
