@@ -51,9 +51,20 @@ class Game {
 
 // Render a Form for Creating a New Game //
 function createGame() {
-  document.getElementbyId("Game Form").submit();
   console.log("Game Created")
+  document.getElementById("Game Form").on("submit"), function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: action,
+      data: params,
+      dataType: 'json',
+      method: "POST"
+    })
+    .success(function(json) {    
+    })
+  })
 }
+
 
 // Render Order Games Function using JS //
 $('order_select').on('change', function(event) {
