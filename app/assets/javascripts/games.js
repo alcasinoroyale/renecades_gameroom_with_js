@@ -54,17 +54,25 @@ function createGame() {
   console.log("Game Created")
   document.getElementById("Game Form").on("submit"), function(e) {
     e.preventDefault();
+
     $.ajax({
       url: action,
       data: params,
       dataType: 'json',
       method: "POST"
     })
-    .success(function(json) {    
+    .success(function(json){
+
     })
-  })
+  }
 }
 
+// Prototype Object Function //
+
+Game.prototype.renderLi =
+  function () {
+  return Game.template(this)
+}
 
 // Render Order Games Function using JS //
 $('order_select').on('change', function(event) {
