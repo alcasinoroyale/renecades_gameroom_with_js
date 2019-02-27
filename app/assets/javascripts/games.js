@@ -2,8 +2,8 @@ $(document).ready(function() {
   loadGames()
   displayGame()
   appendGames()
-  createGame()
   nextGame()
+  createGame()
 })
 
 // Render Games Index with JS //
@@ -34,6 +34,25 @@ function appendGames(){
   $("h4").append($('.all-games').html());
 }
 
+// Feature Button to jump to Next Game //
+function nextGame() {
+  console.log("Next Game")
+  $('button.nextGame').on("click", function(e){
+    e.preventDefault();
+    const nextId = parseInt($("button.nextGame").attr("data-id")) + 1;
+      $.get(`/games/${nextId}.json`, function(data){
+    const game = data;
+      $(".gameName").text(game["name"]);
+      $(".gameDescription").text(game["description"]);
+      $(".gameObjective").text(game["objective"]);
+      $(".gameNumberOfPlayers").text(game["number_of_players"]);
+      $(".gameRewardPoints").text(game["reward_points"]);
+      $(".gameGenre").text(game["genre"]);
+      $("nextGame").attr("data-id", game["id"]);
+    });
+  });
+}
+
 // Constructor for a Game Object //
 class Game {
   constructor(attr) {
@@ -48,6 +67,11 @@ class Game {
     this.genre = attr.genre;
   };
 };
+
+// Render Order Games Function using JS //
+$('order_select').on('change', function(event) {
+    console.log(event);
+});
 
 // Render a Form for Creating a New Game //
 function createGame() {
@@ -70,28 +94,4 @@ function createGame() {
 Game.prototype.renderLi =
   function () {
   return Game.template(this)
-}
-
-// Render Order Games Function using JS //
-$('order_select').on('change', function(event) {
-    console.log(event);
-});
-
-// Feature Button to jump to Next Game //
-function nextGame() {
-  console.log("addListener")
-  $('button.nextGame').on("click", function(e){
-    e.preventDefault();
-    let nextId = parseInt($("button.nextGame").attr("data-id")) + 1;
-      $.get(`/games/${nextId}.json`, function(data){
-    let game = data;
-      $(".gameName").text(game["name"]);
-      $(".gameDescription").text(game["description"]);
-      $(".gameObjective").text(game["objective"]);
-      $(".gameNumberOfPlayers").text(game["number_of_players"]);
-      $(".gameRewardPoints").text(game["reward_points"]);
-      $(".gameGenre").text(game["genre"]);
-      $("nextGame").attr("data-id", game["id"]);
-    });
-  });
 }
