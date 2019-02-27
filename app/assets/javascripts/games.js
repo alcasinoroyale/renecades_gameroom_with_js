@@ -52,8 +52,7 @@ class Game {
 // Render a Form for Creating a New Game //
 function createGame() {
   console.log("Game Created")
-  document.getElementById("Game Form").on("submit"), function(e) {
-    e.preventDefault();
+  document.getElementById("Game Form").submit();
 
     $.ajax({
       url: action,
@@ -62,10 +61,9 @@ function createGame() {
       method: "POST"
     })
     .success(function(json){
-
+      $("game_content").val(" ");
     })
   }
-}
 
 // Prototype Object Function //
 
