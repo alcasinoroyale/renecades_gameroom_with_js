@@ -2,6 +2,7 @@ $(document).ready(function() {
   loadGames()
   displayGame()
   appendGames()
+  createGame()
   nextGame()
 })
 
@@ -33,7 +34,7 @@ function appendGames(){
   $("h4").append($('.all-games').html());
 }
 
-// Render Create a Game Form //
+// Constructor for a Game Object //
 class Game {
   constructor(attr) {
     this.id = attr.id;
@@ -47,6 +48,12 @@ class Game {
     this.genre = attr.genre;
   };
 };
+
+// Render a Form for Creating a New Game //
+function createGame() {
+  document.getElementbyId("Game Form").submit();
+  console.log("Game Created")
+}
 
 // Render Order Games Function using JS //
 $('order_select').on('change', function(event) {
