@@ -76,18 +76,15 @@ $('order_select').on('change', function(event) {
 // Render a Form for Creating a New Game //
 function createGame() {
   console.log("Game Created")
-  document.getElementById("Game Form").submit();
+  $("form#new_game").on("submit", function(e) {
+    e.preventDefault()
+    let $form = $(this);
+    let action = $form.attr("action")
+    let params = $form.serialize()
 
-    $.ajax({
-      url: action,
-      data: params,
-      dataType: 'json',
-      method: "POST"
-    })
-    .success(function(json){
-      $("game_content").val(" ");
-    })
-  }
+    $.post(action, params)
+  })
+}
 
 // Prototype Object Function //
 

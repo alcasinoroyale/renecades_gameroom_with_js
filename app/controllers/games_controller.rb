@@ -26,7 +26,10 @@ class GamesController < ApplicationController
     @game.creator = current_user
     if @game.save
       flash[:message] = "#{@game.name} has been created successfully!"
-      redirect_to game_path(@game)
+      respond_to do |f|
+        f.html {redirect_to game_path(@game)}
+        f.json {render :json => @game}
+      end
     else
       render 'new'
     end
