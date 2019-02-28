@@ -81,8 +81,19 @@ function createGame() {
     let $form = $(this);
     let action = $form.attr("action")
     let params = $form.serialize()
+    $.ajax({
+      url: action,
+      data: params,
+      dataType: "json",
+      method: "POST"
+    })
 
-    $.post(action, params)
+    .success(function(json) {
+      console.log(json)
+    })
+    .error(function(response) {
+      console.log("Not working", response)
+    })
   })
 }
 
