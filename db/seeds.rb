@@ -3,6 +3,7 @@ user_1 = User.create(username: "Geralt of Rivia", email: "geralt@gmail.com", bio
 user_2 = User.create(username: "Yoshi", email: "yoshi@gmail.com", bio: "Nintendo is my childhood", favorite_game: "Mario Kart", reward_points: "20", password: "nintendo")
 user_3 = User.create(username: "Jon Snow", email: "jonsnow@gmail.com", bio: "King in the North!", favorite_game: "Ping Pong", reward_points: "40", password: "bastard")
 user_4 = User.create(username: "Zelda", email: "zelda@gmail.com", bio: "Princess of Destiny", favorite_game: "Breath of the Wild", reward_points: "15", password: "castle")
+user_5 = User.create(username: "Pikachu", email: "pikachu@gmail.com", bio: "Pokemon Legend", favorite_game: "Pokemon Red and Blue", reward_points: "35", password: "electric2")
 
 board = Category.create(name: "Board Games")
 connect_four = Game.create(name: "Connect Four", description: "Players choose a color and insert their discs into the playing grid.", objective: "Form a horizontal, vertical, or diagonal line of four of your own discs.", number_of_players: "2", reward_points: "50", genre: "Strategy", category_id: "1", creator_id: 4)
@@ -16,5 +17,6 @@ grand_theft_auto_V = Game.create(name: "Grand Theft Auto V", description: "Takes
 table = Category.create(name: "Table Games")
 air_hockey = Game.create(name: "Air Hockey", description: "Players face off with paddles and a puck.", objective: "The first player to score 7 goals wins the game.", number_of_players: "2", reward_points: "60", genre: "Sport", category_id: "3", creator_id: 4)
 foosball = Game.create(name: "Foosball", description: "Players control knobs to move the ball into the opponent's goal.", objective: "The First player to score 10 goals wins the game.", number_of_players: "2", reward_points: "60", genre: "Sport", category_id: "3", creator_id: 2)
+pinball = Game.create(name: "Pinball", description: "Players use flippers to aim ball at various targets.", objective: "Earn the highest score!", number_of_players: "1", reward_points: "70", genre: "Arcade", category_id: "3", creator_id: 5)
 
 review_1 = Review.create(title: "Geralt's Review of Connect Four", content: "Connect Four is an awesome game. I would definitely recommend.", game_id: 1, user_id: 1)
