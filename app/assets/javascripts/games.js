@@ -2,6 +2,7 @@ $(document).ready(function() {
   loadGames()
   displayGame()
   appendGames()
+  displayPlayers()
   nextGame()
   createGame()
 })
@@ -75,6 +76,7 @@ $('order_select').on('change', function(event) {
 
 // Render Has-many relationship on Game Show Page //
 function displayPlayers(){
+  console.log("Display Players of Game")
 }
 
 // Render a Form for Creating a New Game //

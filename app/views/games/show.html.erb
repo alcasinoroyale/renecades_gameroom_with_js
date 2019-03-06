@@ -24,7 +24,9 @@ Genre: <%= @game.genre %><br><br>
 <h3>Current Players</h3>
 
 <% @game.users.each do |user| %>
-  <ol><li><%= user.username %></li></ol>
+  <ol>
+    <li><%= user.username %>, <%= user.rank %></li>
+  </ol>
 <% end %>
 
 <div>
