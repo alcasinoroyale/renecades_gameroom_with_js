@@ -73,6 +73,10 @@ $('order_select').on('change', function(event) {
     console.log(event);
 });
 
+// Render Has-many relationship on Game Show Page //
+function displayPlayers(){
+}
+
 // Render a Form for Creating a New Game //
 function createGame() {
   console.log("Game Created")
