@@ -88,15 +88,17 @@ function createGame() {
     let action = $form.attr("action")
     let params = $form.serialize()
     $.ajax({
-      url: action,
+      url: 'http://localhost:3000/games',
       data: params,
       dataType: "json",
       method: "POST"
     })
 
-    .success(function(json) {
-      console.log(json)
+    .done(function(json) {  
+      let newGame = new Game(json)
+      $('all-games').append(newGame)
     })
+
     .error(function(response) {
       console.log("Not working", response)
     })
@@ -105,7 +107,6 @@ function createGame() {
 
 // Prototype Object Function //
 
-Game.prototype.renderLi =
-  function () {
+Game.prototype.renderLi = function() {
   return Game.template(this)
 }
