@@ -27,8 +27,8 @@ class GamesController < ApplicationController
     if @game.save
       flash[:message] = "#{@game.name} has been created successfully!"
       respond_to do |f|
-        f.json {render :json => @game}
-        f.html {redirect_to game_path(@game)}
+        f.html {redirect_to games_path}
+        f.json {render :json => @games}
         binding.pry
       end
     else
@@ -53,9 +53,9 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @current_user = current_user
     @token = @game.tokens.build(user_id:current_user.id)
-      respond_to do |format|
-        format.html {render :show}
-        format.json {render json: @game}
+      respond_to do |f|
+        f.html {render :show}
+        f.json {render json: @game}
       end
   end
 
