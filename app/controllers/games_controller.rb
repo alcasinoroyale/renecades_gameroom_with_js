@@ -29,7 +29,6 @@ class GamesController < ApplicationController
       respond_to do |f|
         f.html {redirect_to games_path}
         f.json {render :json => @games}
-        binding.pry
       end
     else
       render 'new'

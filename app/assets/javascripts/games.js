@@ -1,3 +1,19 @@
+// Constructor for a Game Object //
+class Game {
+  constructor(attr) {
+    debugger
+    this.id = attr.id;
+    this.name = attr.name;
+    this.description = attr.description;
+    this.objective = attr.objective;
+    this.number_of_players = attr.number_of_players;
+    this.reward_points = attr.reward_points;
+    this.creator_id = attr.creator_id;
+    this.category_id = attr.category_id;
+    this.genre = attr.genre;
+  };
+};
+
 $(document).ready(function() {
   loadGames()
   displayGame()
@@ -53,21 +69,6 @@ function nextGame() {
     });
   });
 }
-
-// Constructor for a Game Object //
-class Game {
-  constructor(attr) {
-    this.id = attr.id;
-    this.name = attr.name;
-    this.description = attr.description;
-    this.objective = attr.objective;
-    this.number_of_players = attr.number_of_players;
-    this.reward_points = attr.reward_points;
-    this.creator_id = attr.creator_id;
-    this.category_id = attr.category_id;
-    this.genre = attr.genre;
-  };
-};
 
 // Render Order Games Function using JS //
 $('order_select').on('change', function(event) {
