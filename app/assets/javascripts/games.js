@@ -1,7 +1,6 @@
 // Constructor for a Game Object //
 class Game {
   constructor(attr) {
-    debugger
     this.id = attr.id;
     this.name = attr.name;
     this.description = attr.description;
@@ -54,9 +53,8 @@ function appendGames(){
 // Feature Button to jump to Next Game //
 function nextGame() {
   console.log("Next Game")
-  $('button.nextGame').on("click", function(e){
-    e.preventDefault();
-    const nextId = parseInt($("button.nextGame").attr("data-id")) + 1;
+  $(".js-nextGame").on("click", function(){
+    const nextId = parseInt($(".js-nextGame").attr("data-id")) + 1;
       $.get(`/games/${nextId}.json`, function(data){
     const game = data;
       $(".gameName").text(game["name"]);
@@ -65,7 +63,7 @@ function nextGame() {
       $(".gameNumberOfPlayers").text(game["number_of_players"]);
       $(".gameRewardPoints").text(game["reward_points"]);
       $(".gameGenre").text(game["genre"]);
-      $("nextGame").attr("data-id", game["id"]);
+      $(".js-nextGame").attr("data-id", game["id"]);
     });
   });
 }
