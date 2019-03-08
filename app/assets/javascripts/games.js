@@ -55,7 +55,7 @@ function nextGame() {
   console.log("Next Game")
   $(".js-nextGame").on("click", function(){
     const nextId = parseInt($(".js-nextGame").attr("data-id")) + 1;
-      $.get(`/games/${nextId}.json`, function(data){
+      $.get("/games/" + nextId + ".json", function(data){
     const game = data;
       $(".gameName").text(game["name"]);
       $(".gameDescription").text(game["description"]);
