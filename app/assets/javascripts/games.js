@@ -83,17 +83,10 @@ function createGame() {
   console.log("Game Created")
   $("form#new_game").on("submit", function(e) {
     e.preventDefault()
-    let $form = $(this);
-    let action = $form.attr("action")
-    let params = $form.serialize()
-    $.ajax({
-      url: 'http://localhost:3000/games',
-      data: params,
-      dataType: "json",
-      method: "POST"
-    })
+    let values = $(this).serialize;
+    let posting = $.post('/games', values);
 
-    .done(function(json) {  
+    posting.done(function(json) {
       let newGame = new Game(json)
       $(".all-games").append(newGame)
     })
@@ -103,6 +96,7 @@ function createGame() {
     })
   })
 }
+
 
 // Prototype Object Function //
 
