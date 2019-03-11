@@ -95,7 +95,7 @@ function createGame() {
 
     .done(function(json) {  
       let newGame = new Game(json)
-      $('all-games').append(newGame)
+      $(".all-games").append(newGame)
     })
 
     .error(function(response) {

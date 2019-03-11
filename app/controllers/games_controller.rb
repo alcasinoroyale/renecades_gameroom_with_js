@@ -28,7 +28,7 @@ class GamesController < ApplicationController
       flash[:message] = "#{@game.name} has been created successfully!"
       respond_to do |f|
         f.html {redirect_to games_path}
-        f.json {render :json => @games}
+        f.json {render :json => @game}
       end
     else
       render 'new'
