@@ -1,3 +1,38 @@
+$(document).ready(function() {
+  createGame()
+  loadGames()
+  displayGame()
+  appendGames()
+  displayPlayers()
+  nextGame()
+})
+
+// Render a Form for Creating a New Game //
+function createGame() {
+  console.log("Game Created")
+  $("form#new_game").on("submit", function(e) {
+    e.preventDefault()
+    let $form = $(this);
+    let action = $form.attr("action")
+    let params = $form.serialize()
+    $.ajax({
+      url: 'http://localhost:3000/games',
+      data: params,
+      dataType: "json",
+      method: "POST"
+    })
+
+    .done(function(json) {  
+      let newGame = new Game(json)
+      $('.all-games').append(newGame)
+    })
+
+    .error(function(response) {
+      console.log("Not working", response)
+    })
+  })
+}
+
 // Constructor for a Game Object //
 class Game {
   constructor(attr) {
@@ -13,14 +48,6 @@ class Game {
   };
 };
 
-$(document).ready(function() {
-  loadGames()
-  displayGame()
-  appendGames()
-  displayPlayers()
-  nextGame()
-  createGame()
-})
 
 // Render Games Index with JS //
 function loadGames() {
@@ -77,26 +104,6 @@ $('order_select').on('change', function(event) {
 function displayPlayers(){
   console.log("Display Players of Game")
 }
-
-// Render a Form for Creating a New Game //
-function createGame() {
-  console.log("Game Created")
-  $("form#new_game").on("submit", function(e) {
-    e.preventDefault()
-    let values = $(this).serialize;
-    let posting = $.post('/games', values);
-
-    posting.done(function(json) {
-      let newGame = new Game(json)
-      $(".all-games").append(newGame)
-    })
-
-    .error(function(response) {
-      console.log("Not working", response)
-    })
-  })
-}
-
 
 // Prototype Object Function //
 
