@@ -103,6 +103,7 @@ $('order_select').on('change', function(event) {
 // Render Has-many relationship on Game Show Page //
 function displayPlayers(){
   console.log("Display Players of Game")
+  document.getElementById("CP").style.fontWeight = "900";
 }
 
 // Prototype Object Function //

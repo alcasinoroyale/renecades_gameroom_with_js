@@ -23,11 +23,13 @@ Genre: <%= @game.genre %><br><br>
 
 <h3>Current Players</h3>
 
+<div id="CP"
 <% @game.users.each do |user| %>
   <ol>
     <li><%= user.username %>, <%= user.rank %></li>
   </ol>
 <% end %>
+</div>
 
 <div>
   <a href="#" class="js-nextGame" data-id="<%= @game.id %>">Next Game </a>
