@@ -9,7 +9,6 @@ $(document).ready(function() {
 
 // Render a Form for Creating a New Game //
 function createGame() {
-  console.log("Game Created")
   $("form#new_game").on("submit", function(e) {
     e.preventDefault()
     let $form = $(this);
@@ -23,6 +22,7 @@ function createGame() {
     })
 
     .done(function(json) {  
+      console.log("Game Created")
       console.log(json)
       let newGame = new Game(json);
       $('.all-games').append(newGame)
@@ -52,7 +52,7 @@ class Game {
 
 // Render Games Index with JS //
 function loadGames() {
-  console.log("all-games")
+  console.log("Load Games")
   $.ajax({
     url: 'http://localhost:3000/games',
     method: 'GET',
