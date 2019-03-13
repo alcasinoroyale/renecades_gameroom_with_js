@@ -21,20 +21,20 @@ Genre: <%= @game.genre %><br><br>
 
 <br><%= link_to "Write Review", new_game_review_path(@game, @review) %><br>
 
-<h3>Current Players</h3>
-
-<div id="CP"
-<% @game.users.each do |user| %>
-  <ol>
-    <li><%= user.username %>, <%= user.rank %></li>
-  </ol>
-<% end %>
-</div>
-
-<% #Notes for JS if game user exists, click on Current Players to reveal. If there are no current users, hide Current Players heading completely. %>
-
-<br>
-
 <div>
   <a href="#" class="js-nextGame" data-id="<%= @game.id %>">Next Game </a>
 </div>
+
+<br>
+
+<h3>Current Players</h3>
+
+<div id="CP"
+<ol>
+  <% @game.users.each do |user| %>
+    <li><%= user.username %>, <%= user.rank %></li>
+  <% end %>
+</ol>
+</div>
+
+<% #Notes for JS if game user exists, click on Current Players to reveal. If there are no current users, hide Current Players heading completely. %>
