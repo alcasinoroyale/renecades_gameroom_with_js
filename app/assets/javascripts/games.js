@@ -65,10 +65,10 @@ function loadGames() {
 // Render Show Page for Each Game //
 function displayGame() {
   $(".js-more").on("click", function() {
-           const id = $(this).data("id");
-        $.get("/games/" + id + ".json", function(g) {
-             const moreInfo = "<h2>" + g["name"] + "</h2>" + g["reward_points"] + " Reward Points" + "<br>" + "<a href='/games/" + id +"'>All Game Info</a>"
-            $("#game-" + id).html(moreInfo);
+    const id = $(this).data("id");
+      $.get("/games/" + id + ".json", function(g) {
+    const moreInfo = "<h2>" + g["name"] + "</h2>" + g["reward_points"] + " Reward Points" + "<br>" + "<a href='/games/" + id +"'>All Game Info</a>"
+      $("#game-" + id).html(moreInfo);
     })
   });
 }

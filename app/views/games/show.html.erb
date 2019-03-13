@@ -31,6 +31,10 @@ Genre: <%= @game.genre %><br><br>
 <% end %>
 </div>
 
+<% #Notes for JS if game user exists, click on Current Players to reveal. If there are no current users, hide Current Players heading completely. %>
+
+<br>
+
 <div>
   <a href="#" class="js-nextGame" data-id="<%= @game.id %>">Next Game </a>
 </div>
