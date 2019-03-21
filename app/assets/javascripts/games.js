@@ -4,6 +4,7 @@ $(document).ready(function() {
   displayGame()
   appendGames()
   displayPlayers()
+  displayNewGame()
   nextGame()
 })
 
@@ -69,6 +70,7 @@ function displayGame() {
       $.get("/games/" + id + ".json", function(g) {
     const moreInfo = "<h2>" + g["name"] + "</h2>" + g["reward_points"] + " Reward Points" + "<br>" + "<a href='/games/" + id +"'>All Game Info</a>"
       $("#game-" + id).html(moreInfo);
+    console.log(`${moreInfo}`);
     })
   });
 }
@@ -105,6 +107,11 @@ $('order_select').on('change', function(event) {
 function displayPlayers(){
   document.getElementById("CP")
   console.log("Display Current Players")
+}
+
+// Display NewGame on Page Before Index //
+function displayNewGame() {
+  document.getElementById("nGame").innerHTML
 }
 
 // Prototype Object Function //
