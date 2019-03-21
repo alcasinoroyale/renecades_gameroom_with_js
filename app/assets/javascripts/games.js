@@ -103,7 +103,7 @@ $('order_select').on('change', function(event) {
 
 // Render Has-many relationship on Game Show Page //
 function displayPlayers(){
-  document.getElementById("CP").style.fontWeight = "900";
+  document.getElementById("CP")
   console.log("Display Current Players")
 }
 
