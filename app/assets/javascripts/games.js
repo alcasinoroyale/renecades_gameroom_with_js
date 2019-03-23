@@ -26,6 +26,9 @@ function createGame() {
       console.log("Game Created")
       console.log(json)
       let newGame = new Game(json);
+      $('#renecades-container').html('')
+      const gameDetails = newGame.formatShow()
+      $('#renecades-container').html(gameDetails)
       $('.all-games').append(newGame)
     })
 
@@ -117,5 +120,9 @@ function displayNewGame() {
 // Prototype Object Function //
 
 Game.prototype.formatShow = function() {
-  let postHtml = ``
+  let postHtml = `
+  <h2>${this.name}</h2>
+  <h3>${this.description}</h3>
+  `
+  return postHtml
 }
