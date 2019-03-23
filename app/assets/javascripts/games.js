@@ -4,7 +4,6 @@ $(document).ready(function() {
   displayGame()
   appendGames()
   displayPlayers()
-  displayNewGame()
   nextGame()
 })
 
@@ -112,17 +111,15 @@ function displayPlayers(){
   console.log("Display Current Players")
 }
 
-// Display NewGame on Page Before Index //
-function displayNewGame() {
-  document.getElementById("nGame").innerHTML
-}
-
 // Prototype Object Function //
-
 Game.prototype.formatShow = function() {
   let postHtml = `
   <h2>${this.name}</h2>
   <h3>${this.description}</h3>
+  <h3>${this.objective}</h3>
+  <h3>${this.number_of_players} Players</h3>
+  <h3>${this.reward_points} Reward Points</h3>
+  <h3>${this.genre}</h3>
   `
   return postHtml
 }
