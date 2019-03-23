@@ -116,6 +116,6 @@ function displayNewGame() {
 
 // Prototype Object Function //
 
-Game.prototype.renderLi = function() {
-  return Game.template(this)
+Game.prototype.formatShow = function() {
+  let postHtml = ``
 }
