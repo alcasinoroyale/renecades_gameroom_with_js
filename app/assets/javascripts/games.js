@@ -88,14 +88,11 @@ function nextGame() {
   $(".js-nextGame").on("click", function(){
     const nextId = parseInt($(".js-nextGame").attr("data-id")) + 1;
       $.get("/games/" + nextId + ".json", function(data){
-    const game = data;
-      $(".gameName").text(game["name"]);
-      $(".gameDescription").text(game["description"]);
-      $(".gameObjective").text(game["objective"]);
-      $(".gameNumberOfPlayers").text(game["number_of_players"]);
-      $(".gameRewardPoints").text(game["reward_points"]);
-      $(".gameGenre").text(game["genre"]);
-      $(".js-nextGame").attr("data-id", game["id"]);
+      console.log(data);
+      let newGame = new Game(data);
+      $('#renecades-container').html('')
+      const gameDetails = newGame.formatShow()
+      $('#renecades-container').html(gameDetails)
     });
   });
 }
@@ -115,11 +112,11 @@ function displayPlayers(){
 Game.prototype.formatShow = function() {
   let postHtml = `
   <h2>${this.name}</h2>
-  <h3>${this.description}</h3>
-  <h3>${this.objective}</h3>
-  <h3>${this.number_of_players} Players</h3>
-  <h3>${this.reward_points} Reward Points</h3>
-  <h3>${this.genre}</h3>
+  <p>${this.description}</p>
+  <p>${this.objective}</p>
+  <p>Number of Players: ${this.number_of_players}</p>
+  <p>Rewards Points: ${this.reward_points}</p>
+  <p>${this.genre}</p>
   `
   return postHtml
 }
