@@ -70,7 +70,7 @@ function displayGame() {
   $(".js-more").on("click", function() {
     const id = $(this).data("id");
       $.get("/games/" + id + ".json", function(g) {
-    const moreInfo = "<h2>" + g["name"] + "</h2>" + g["reward_points"] + " Reward Points" + "<br>" + "<a href='/games/" + id +"'>All Game Info</a>"
+    const moreInfo = "<h3>" + g["name"] + "</h3>" + g["reward_points"] + " Reward Points" + "<br>" + "<a href='/games/" + id +"'>All Game Info</a>"
       $("#game-" + id).html(moreInfo);
     console.log(`${moreInfo}`);
     })
@@ -101,6 +101,8 @@ $('order_select').on('change', function(event) {
 function displayPlayers(){
   document.getElementById("CP")
   console.log("Display Current Players")
+  console.log(document.getElementById("CP")
+)
 }
 
 // Prototype Object Function //
@@ -112,7 +114,6 @@ Game.prototype.formatShow = function() {
   <p>Number of Players: ${this.number_of_players}</p>
   <p>Rewards Points: ${this.reward_points}</p>
   <p>${this.genre}</p>
-  <p>${this.users[0].username}</p>
   `
   return postHtml
 }
