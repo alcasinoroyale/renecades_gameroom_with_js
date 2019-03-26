@@ -48,6 +48,7 @@ class Game {
     this.creator_id = attr.creator_id;
     this.category_id = attr.category_id;
     this.genre = attr.genre;
+    this.users = attr.users;
   };
 };
 
@@ -111,6 +112,7 @@ Game.prototype.formatShow = function() {
   <p>Number of Players: ${this.number_of_players}</p>
   <p>Rewards Points: ${this.reward_points}</p>
   <p>${this.genre}</p>
+  <p>${this.users[0].username}</p>
   `
   return postHtml
 }
