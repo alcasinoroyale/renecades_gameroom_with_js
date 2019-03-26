@@ -16,15 +16,16 @@ See what other gamers are playing and climb up the leaderboard!<p>
   include_blank: true, id: "order_select"%><br><br>
   <%= submit_tag "Order Games" %>
 <% end %>
+<br>
 
-<%= image_tag("renecades.jpg", :class => "style_image")  %>
-
-<h4>All Games</h4>
 
 <% #Loading Games Index with JS" %>
 <div>
+  <h2>All Games</h2>
 <% @games.each do |game| %>
   <div id="game-<%= game.id %>"></div><br>
-  <button class="js-more" data-id="<%= game.id %>"><%= game.name %></button>
+  <a class="js-more" data-id="<%= game.id %>"><%= game.name %></a>
 <% end %>
 </div>
+
+<%= image_tag("renecades.jpg", :class => "style_image")  %>

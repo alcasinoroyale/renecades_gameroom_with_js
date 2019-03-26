@@ -2,7 +2,6 @@ $(document).ready(function() {
   createGame()
   loadGames()
   displayGame()
-  appendGames()
   displayPlayers()
   nextGame()
 })
@@ -75,11 +74,6 @@ function displayGame() {
     console.log(`${moreInfo}`);
     })
   });
-}
-
-// Iterate All Games and Append Them to the DOM //
-function appendGames(){
-  $("h4").append($('.all-games').html());
 }
 
 // Feature Button to jump to Next Game //
