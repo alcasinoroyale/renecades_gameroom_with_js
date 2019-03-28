@@ -114,6 +114,23 @@ Game.prototype.formatShow = function() {
   <p>Number of Players: ${this.number_of_players}</p>
   <p>Rewards Points: ${this.reward_points}</p>
   <p>${this.genre}</p>
+  <p>First Player: ${this.users[0].username}</p>
+  `
+  return postHtml
+}
+
+// Category Constructor and Prototype
+class Category {
+  constructor(attr) {
+    this.id = attr.id;
+    this.name = attr.name;
+    this.games = attr.games;
+  };
+};
+
+
+Category.prototype.formatShow = function() {
+  let postHtml = `
   `
   return postHtml
 }
