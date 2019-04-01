@@ -118,7 +118,7 @@ Game.prototype.formatShow = function() {
   <p>Number of Players: ${this.number_of_players}</p>
   <p>Rewards Points: ${this.reward_points}</p>
   <p>${this.genre}</p>
-  <p>Current Players:<br> ${this.users[0].username}<br>${this.users[1].username}</p>
+  <p>Current Players: ${this.users[0].username}, ${this.users[1].username}</p>
   `
   return postHtml
 }
