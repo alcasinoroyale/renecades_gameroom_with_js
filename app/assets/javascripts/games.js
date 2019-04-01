@@ -2,8 +2,9 @@ $(document).ready(function() {
   createGame()
   loadGames()
   displayGame()
-  displayPlayers()
   nextGame()
+  orderGames()
+  displayPlayers()
 })
 
 // Render a Form for Creating a New Game //
@@ -93,9 +94,12 @@ function nextGame() {
 }
 
 // Render Order Games Function using JS //
-$('order_select').on('change', function(event) {
-    console.log(event);
-});
+function orderGames() {
+  console.log("Order Games")
+  $('.order_select').on('change', function(event) {
+      console.log(event);
+  });
+}
 
 // Render Has-many relationship on Game Show Page //
 function displayPlayers(){
@@ -114,11 +118,13 @@ Game.prototype.formatShow = function() {
   <p>Number of Players: ${this.number_of_players}</p>
   <p>Rewards Points: ${this.reward_points}</p>
   <p>${this.genre}</p>
+  <p>Current Players: ${this.users}</p>
   `
   return postHtml
 }
 
 // Category Constructor and Prototype
+
 class Category {
   constructor(attr) {
     this.id = attr.id;
@@ -127,8 +133,8 @@ class Category {
   };
 };
 
-
 Category.prototype.formatShow = function() {
+  console.log(this)
   let postHtml = `
   <h2>${this.name}</h2>
   `

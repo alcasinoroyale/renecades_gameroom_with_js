@@ -4,8 +4,10 @@
 <%= image_tag("game-console.png", height: "100", width: "100") %>
 <%= image_tag("ping-pong-bat.png", height: "100", width: "100") %>
 
+<div class="all-categories">
 <ol>
 <% @category.each do |category| %>
   <li><h3><%= link_to category.name, category_path(category) %></h3></li>
 <% end %>
 </ol>
+</div>
