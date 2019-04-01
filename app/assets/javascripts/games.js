@@ -101,7 +101,7 @@ function orderGames() {
   });
 }
 
-// Render Has-many relationship on Game Show Page //
+// Render has-many relationship on Game Show Page //
 function displayPlayers(){
   document.getElementById('CP')
   console.log("Display Current Players")
