@@ -114,7 +114,6 @@ Game.prototype.formatShow = function() {
   <p>Number of Players: ${this.number_of_players}</p>
   <p>Rewards Points: ${this.reward_points}</p>
   <p>${this.genre}</p>
-  <p>First Player: ${this.users[0].username}</p>
   `
   return postHtml
 }
@@ -131,6 +130,7 @@ class Category {
 
 Category.prototype.formatShow = function() {
   let postHtml = `
+  <h2>${this.name}</h2>
   `
   return postHtml
 }
