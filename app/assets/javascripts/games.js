@@ -1,6 +1,7 @@
 $(document).ready(function() {
   createGame()
   loadGames()
+  loadCategories()
   displayGame()
   nextGame()
   orderGames()
@@ -64,6 +65,11 @@ function loadGames() {
     success: function(response) {
     }
   })
+}
+
+// Load Categories with JS //
+function loadCategories() {
+  console.log("Load Categories")
 }
 
 // Render Show Page for Each Game //
