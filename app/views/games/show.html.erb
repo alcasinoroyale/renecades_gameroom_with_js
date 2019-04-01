@@ -32,7 +32,7 @@ Genre: <%= @game.genre %><br><br>
   <% if @game.users.exists? %>
   <h3>Current Players</h3>
   <% @game.users.each do |user| %>
-    <li><%= user.username %>, <%= user.rank %></li>
+    <li id="player"> <%= user.username %>, <%= user.rank %></li>
   <% end %>
   <% else %>
     <h4>No Current Players</h4>
