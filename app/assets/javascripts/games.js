@@ -110,9 +110,9 @@ function orderGames() {
 
 // Render has-many relationship on Game Show Page //
 function displayPlayers(){
-  document.getElementById('CP')
-  console.log("Display Current Players")
-  console.log(document.getElementById('CP'))
+  $(".CP").on("click", function(event) {
+    console.log(document.getElementById('player').innerHTML)
+  })
 }
 
 // Prototype Object Function //

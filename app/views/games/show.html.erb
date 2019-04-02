@@ -27,16 +27,19 @@ Genre: <%= @game.genre %><br><br>
 
 <br>
 
-<div id="CP"
+<div id="AP"
 <ol>
+  
   <% if @game.users.exists? %>
-  <h3>Current Players</h3>
-  <% @game.users.each do |user| %>
-    <li id="player"> <%= user.username %>, <%= user.rank %></li>
+  <a class="CP"><h3>Current Players</h3></a>
+    <% @game.users.each do |user| %>
+   <li id="player"> <%= user.username %>, <%= user.rank %></li>
   <% end %>
+
   <% else %>
     <h4>No Current Players</h4>
   <% end %>
+
 </ol>
 </div>
 
