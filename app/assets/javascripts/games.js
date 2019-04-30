@@ -1,7 +1,6 @@
 $(document).ready(function() {
   createGame()
   loadGames()
-  loadCategories()
   displayGame()
   nextGame()
   orderGames()
@@ -132,24 +131,4 @@ Game.prototype.formatShow = function() {
 function validateGameUser()  {
   let user = document.getElementById('player').innerHTML
   console.log(user)
-}
-
-// Potentially make an if statement inside prototype object. If user(s) exists for the game, display users.username and if there are no current players, display the creator instead.
-
-// Category Constructor and Prototype
-
-class Category {
-  constructor(attr) {
-    this.id = attr.id;
-    this.name = attr.name;
-    this.games = attr.games;
-  };
-};
-
-Category.prototype.formatShow = function() {
-  console.log(this)
-  let postHtml = `
-  <h2>${this.name}</h2>
-  `
-  return postHtml
 }
