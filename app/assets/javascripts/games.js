@@ -4,7 +4,6 @@ $(document).ready(function() {
   displayGame()
   nextGame()
   orderGames()
-  displayPlayers()
   validateGameUser()
 })
 
@@ -67,11 +66,6 @@ function loadGames() {
   })
 }
 
-// Load Categories with JS //
-function loadCategories() {
-  console.log("Load Categories")
-}
-
 // Render Show Page for Each Game //
 function displayGame() {
   $(".js-more").on("click", function() {
@@ -105,13 +99,6 @@ function orderGames() {
   $('.order_select').on('change', function(event) {
       console.log(event);
   });
-}
-
-// Render has-many relationship on Game Show Page //
-function displayPlayers(){
-  $(".CP").on("click", function(event) {
-    console.log(document.getElementById('player').innerHTML)
-  })
 }
 
 // Prototype Object Function //
