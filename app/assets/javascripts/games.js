@@ -57,6 +57,18 @@ class Game {
 function loadGames() {
   $('.games_data').on('click', function(event) {
     event.preventDefault()
+    history.pushState(null, '', 'games')
+      fetch(`/games.json`)
+      .then(resp => resp.json())
+      .then(games => {
+        $('#renecades-container').html('')
+
+        games.forEach(game => {
+          let newGame = new Game(game)
+          let gameHtml = newGame.formatGame()
+          $('#renecades-container').append(gameHtml)
+      })
+    })
   })
 }
 
