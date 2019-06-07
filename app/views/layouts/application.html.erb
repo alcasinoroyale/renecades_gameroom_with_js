@@ -23,7 +23,7 @@
         <% if !logged_in? %>
           <%= link_to "Login", '/login' %>
         <% elsif logged_in? %>
-          <%= link_to "Play Games", games_path %>
+          <%= link_to "Play Games", games_path, class: "games_data" %>
           <%= link_to "Create Games", new_game_path %>
           <%= link_to "Search Categories", categories_path %>
           <%= link_to "Leaderboard", users_path %>

@@ -27,9 +27,13 @@ Genre: <%= @game.genre %><br><br>
 
 <br>
 
-<div id="AP"
+<a onclick="displayPlayers()">
+  <h3>Current Players</h3>
+</a>
+
+<div id="active"
 <ol>
-  
+
   <% if @game.users.exists? %>
   <a class="CP"><h3>Current Players</h3></a>
     <% @game.users.each do |user| %>
@@ -37,10 +41,8 @@ Genre: <%= @game.genre %><br><br>
   <% end %>
 
   <% else %>
-    <h4>No Current Players</h4>
+    There are no active players.
   <% end %>
 
 </ol>
 </div>
-
-<% #Notes for JS if game user exists, click on Current Players to reveal. If there are no current users, hide Current Players heading completely. %>
