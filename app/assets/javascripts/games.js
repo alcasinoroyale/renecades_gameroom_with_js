@@ -24,7 +24,7 @@ function createGame() {
       console.log(json)
       let newGame = new Game(json);
       $('#renecades-container').html('')
-      const gameDetails = newGame.formatShow()
+      const gameDetails = newGame.newGameForm()
       $('#renecades-container').html(gameDetails)
       $('.all-games').append(newGame)
     })
@@ -103,8 +103,27 @@ function orderGames() {
   });
 }
 
-// Prototype Object Function //
+// Game Prototype for Existing Game //
 Game.prototype.formatShow = function() {
+  let userHtml = this.users.map (user => {
+    return (`
+      Current Players: ${user.username}
+      `)
+  }).join('')
+
+  return(`
+    <h2>${this.name}</h2>
+    <p>${this.description}</p>
+    <p>${this.objective}</p>
+    <p>Number of Players: ${this.number_of_players}</p>
+    <p>Rewards Points: ${this.reward_points}</p>
+    <p>${this.genre}</p>
+    ${userHtml}
+  `)
+}
+
+// Game Prototype for New Game //
+Game.prototype.newGameForm = function() {
   let postHtml = `
   <h2>${this.name}</h2>
   <p>${this.description}</p>
@@ -112,7 +131,6 @@ Game.prototype.formatShow = function() {
   <p>Number of Players: ${this.number_of_players}</p>
   <p>Rewards Points: ${this.reward_points}</p>
   <p>${this.genre}</p>
-  <p>Current Players: ${this.users}</p>
   `
   return postHtml
 }
