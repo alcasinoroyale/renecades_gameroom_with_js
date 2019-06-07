@@ -1,7 +1,6 @@
 $(document).ready(function() {
   createGame()
   loadGames()
-  displayGame()
   nextGame()
   orderGames()
 })
@@ -72,16 +71,13 @@ function loadGames() {
   })
 }
 
-// Render Show Page for Each Game //
-function displayGame() {
-  $(".js-more").on("click", function() {
-    const id = $(this).data("id");
-      $.get("/games/" + id + ".json", function(g) {
-    const moreInfo = "<h3>" + g["name"] + "</h3>" + g["reward_points"] + " Reward Points" + "<br>" + "<a href='/games/" + id +"'>All Game Info</a>"
-      $("#game-" + id).html(moreInfo);
-    console.log(`${moreInfo}`);
-    })
-  });
+// Prototype Object to Format Games Index //
+Game.prototype.formatGame = function() {
+  return (`
+    <a href="/games/${this.id}" data-id="${this.id}" class="show_games"><h3>${this.name}</h3></a>
+    <p>${this.description}</p>
+    <p>${this.reward_points} Reward Points</p>
+  `)
 }
 
 // Feature Button to jump to Next Game //
