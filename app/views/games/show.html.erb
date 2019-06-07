@@ -33,11 +33,9 @@ Genre: <%= @game.genre %><br><br>
 
 <div id="active"
 <ol>
-
   <% if @game.users.exists? %>
-  <a class="CP"><h3>Current Players</h3></a>
     <% @game.users.each do |user| %>
-   <li id="player"> <%= user.username %>, <%= user.rank %></li>
+   <li id="player"> <%= link_to user.username, user_path(user) %>, <%= user.rank %></li>
   <% end %>
 
   <% else %>
@@ -46,3 +44,14 @@ Genre: <%= @game.genre %><br><br>
 
 </ol>
 </div>
+
+<script>
+function displayPlayers() {
+  let p = document.getElementById("active");
+   if (p.style.display === "none") {
+     p.style.display = "block";
+   } else {
+     p.style.display = "none";
+   }
+ }
+</script>
