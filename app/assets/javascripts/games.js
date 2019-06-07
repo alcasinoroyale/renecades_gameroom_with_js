@@ -4,7 +4,6 @@ $(document).ready(function() {
   displayGame()
   nextGame()
   orderGames()
-  validateGameUser()
 })
 
 // Render a Form for Creating a New Game //
@@ -56,13 +55,8 @@ class Game {
 
 // Render Games Index with JS //
 function loadGames() {
-  console.log("Load Games")
-  $.ajax({
-    url: 'http://localhost:3000/games',
-    method: 'GET',
-    dataType: 'json',
-    success: function(response) {
-    }
+  $('.games_data').on('click', function(event) {
+    event.preventDefault()
   })
 }
 
@@ -113,9 +107,4 @@ Game.prototype.formatShow = function() {
   <p>Current Players: ${this.users}</p>
   `
   return postHtml
-}
-
-function validateGameUser()  {
-  let user = document.getElementById('player').innerHTML
-  console.log(user)
 }
