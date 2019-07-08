@@ -122,9 +122,11 @@ function orderGames() {
 
 function changeColor() {
   console.log(document.body)
-  document.body.style.backgroundColor = "#B39109"
+  document.body.style.backgroundColor = "#146780"
   document.body.style.color = "black"
   document.getElementsByTagName('H1')[0].style.color = "black"
+  document.getElementsByTagName('nav')[0].style.backgroundColor = "#981010"
+  document.getElementsByTagName('nav')[0].style.borderStyle = "solid"
 }
 
 // Game Prototype for Existing Game //
