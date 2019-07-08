@@ -104,11 +104,27 @@ function orderGames() {
       .then(games => {
 
         let alpha = games.sort(function(a, b) {
-          return (a.name > b.name ) ? 1 : -1
+          return a.name.localeCompare(b.name)
+          // return (a.name > b.name ) ? 1 : -1 //
         })
         console.log(alpha)
+
+        $('#renecades-container').html('')
+        games.forEach(alpha => {
+          let sortedGame = new Game(alpha)
+          let gameDetails = sortedGame.formatGame()
+          $('#renecades-container').append(gameDetails)
+          console.log("Order Games")
+      })
     })
   })
+}
+
+function changeColor() {
+  console.log(document.body)
+  document.body.style.backgroundColor = "#B39109"
+  document.body.style.color = "black"
+  document.getElementsByTagName('H1')[0].style.color = "black"
 }
 
 // Game Prototype for Existing Game //

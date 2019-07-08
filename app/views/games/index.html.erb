@@ -6,6 +6,8 @@ See what other gamers are playing and climb up the leaderboard!<p>
 
 <button id="order_select">Order Games</button>
 
+<button id="change-color" onClick="changeColor()">Change Color</Button>
+
 <div class="all-games">
 <% @games.each do |game| %>
     <h3><%= link_to game.name, game_path(game) %></h3>
