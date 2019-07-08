@@ -4,9 +4,9 @@
 Join the fun and start earning rewards for every game that you play.<br>
 See what other gamers are playing and climb up the leaderboard!<p>
 
-<button id="order_select">Order Games</button>
-
-<button id="change-color" onClick="changeColor()">Change Color</Button>
+<div class="games-list">
+  <button id="order_select">Order Games</button>
+  <button id="change-color" onClick="changeColor()">Change Color</Button>
 
 <div class="all-games">
 <% @games.each do |game| %>
@@ -20,6 +20,10 @@ See what other gamers are playing and climb up the leaderboard!<p>
   include_blank: true, class: "order_select"%><br><br>
   <%= submit_tag "Order Games" %>
 <% end %>
+</div>
+
 <br>
 
+<div class="game-image">
 <%= image_tag("renecades.jpg", :class => "style_image")  %>
+</div>
