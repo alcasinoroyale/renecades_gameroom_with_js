@@ -97,10 +97,18 @@ function nextGame() {
 
 // Render Order Games Function using JS //
 function orderGames() {
-  console.log("Order Games")
-  $('.order_select').on('change', function(event) {
-      console.log(event);
-  });
+  $('#order_select').on('click', function(event) {
+    event.preventDefault()
+      fetch(`/games.json`)
+      .then(resp => resp.json())
+      .then(games => {
+
+        let alpha = games.sort(function(a, b) {
+          return (a.name > b.name ) ? 1 : -1
+        })
+        console.log(alpha)
+    })
+  })
 }
 
 // Game Prototype for Existing Game //
