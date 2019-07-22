@@ -2,6 +2,7 @@ $(document).ready(function() {
   createGame()
   loadGames()
   nextGame()
+  changeColor()
   orderGames()
 })
 
@@ -103,15 +104,15 @@ function orderGames() {
       .then(resp => resp.json())
       .then(games => {
 
-        let alpha = games.sort(function(a, b) {
+        games.sort(function(a, b) {
           return a.name.localeCompare(b.name)
           // return (a.name > b.name ) ? 1 : -1 //
         })
-        console.log(alpha)
+        console.log(games)
 
         $('#renecades-container').html('')
-        games.forEach(alpha => {
-          let sortedGame = new Game(alpha)
+        games.forEach(game => {
+          let sortedGame = new Game(game)
           let gameDetails = sortedGame.formatGame()
           $('#renecades-container').append(gameDetails)
           console.log("Order Games")
@@ -121,12 +122,15 @@ function orderGames() {
 }
 
 function changeColor() {
-  console.log(document.body)
-  document.body.style.backgroundColor = "#146780"
-  document.body.style.color = "black"
-  document.getElementsByTagName('H1')[0].style.color = "black"
-  document.getElementsByTagName('nav')[0].style.backgroundColor = "#981010"
-  document.getElementsByTagName('nav')[0].style.borderStyle = "solid"
+  $('#change-color').on('click', function(event) {
+    event.preventDefault()
+    console.log(document.body)
+    document.body.style.backgroundColor = "#146780"
+    document.body.style.color = "black"
+    document.getElementsByTagName('H1')[0].style.color = "black"
+    document.getElementsByTagName('nav')[0].style.backgroundColor = "#981010"
+    document.getElementsByTagName('nav')[0].style.borderStyle = "solid"
+  })
 }
 
 // Game Prototype for Existing Game //
