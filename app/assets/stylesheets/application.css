@@ -138,3 +138,8 @@ form input[type='text'] {
   background-image: url(navimage.png);
   background-size: 840px 190px
 }
+
+#search-submit {
+  position: relative;
+  left: 10px;
+}

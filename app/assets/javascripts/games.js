@@ -2,6 +2,9 @@ $(document).ready(function() {
   createGame()
   loadGames()
   nextGame()
+  moreRewards()
+  searchKeywords()
+  findCategory()
   changeColor()
   orderGames()
 })
@@ -48,10 +51,47 @@ class Game {
     this.creator_id = attr.creator_id;
     this.category_id = attr.category_id;
     this.genre = attr.genre;
+    this.category = attr.category;
     this.users = attr.users;
   };
 };
 
+function moreRewards() {
+  $('#more-rewards').on('click', function(event){
+    event.preventDefault()
+    fetch(`/games.json`)
+      .then(resp => resp.json())
+      .then(games => {
+        const moreRewards = games.filter(game => game.reward_points > 60)
+        console.log(moreRewards)
+        $('#renecades-container').html('')
+        moreRewards.forEach(game => {
+          let newGame = new Game(game)
+          let gameHtml = newGame.formatGame()
+          $('#renecades-container').append(gameHtml)
+      })
+    })
+  })
+}
+
+function searchKeywords() {
+  $('#search-form').on('submit', function(event) {
+    event.preventDefault()
+    console.log('search')
+    fetch(`/games.json`)
+      .then(resp => resp.json())
+      .then(games => {
+          const searchResults = games.filter(game => game.description.toLowerCase().includes($('#search')[0].value.toLowerCase()))
+          $('#renecades-container').html('')
+          console.log(searchResults)
+          searchResults.forEach(game => {
+            let newGame = new Game(game)
+            let gameHtml = newGame.formatGame()
+            $('#renecades-container').append(gameHtml)
+        })
+    })
+  })
+}
 
 // Render Games Index with JS //
 function loadGames() {
@@ -72,12 +112,34 @@ function loadGames() {
   })
 }
 
+function findCategory() {
+  $('#find-categories').on('click', function(event){
+    event.preventDefault()
+    fetch(`/games.json`)
+      .then(resp => resp.json())
+      .then(games => {
+        $('#renecades-container').html('')
+        games.forEach(game => {
+          let newGame = new Game(game)
+          let gameHtml = newGame.displayGenres()
+          $('#renecades-container').append(gameHtml)
+      })
+    })
+  })
+}
+
 // Prototype Object to Format Games Index //
 Game.prototype.formatGame = function() {
   return (`
     <a href="/games/${this.id}" data-id="${this.id}" class="show_games"><h3>${this.name}</h3></a>
     <p>${this.description}</p>
     <p>${this.reward_points} Reward Points</p>
+  `)
+}
+
+Game.prototype.displayGenres = function() {
+  return (`
+    <h3>${this.name} belongs to ${this.category.name}</h3>
   `)
 }
 

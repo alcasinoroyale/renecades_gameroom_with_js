@@ -4,9 +4,18 @@
 Join the fun and start earning rewards for every game that you play.<br>
 See what other gamers are playing and climb up the leaderboard!<p>
 
+  <%= form_tag "/games", id: "search-form", method: "get" do %>
+    <input type="text" id="search" placeholder="search description">
+    <input type="submit" id="search-submit" value="submit">
+  <% end %>
+
+<br>
+
 <div class="games-list">
   <button id="order_select">Order Games</button>
-  <button id="change-color">Change Color</Button>
+  <button id="change-color">Change Color</button>
+  <button id="more-rewards">More Rewards</button>
+  <button id="find-categories">Find Categories</button>
 
 <div class="all-games">
 <% @games.each do |game| %>
