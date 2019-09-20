@@ -1,11 +1,12 @@
-<h3> Welcome Back to Renecades, Please Login to Play!</h3>
-<div class="wrapper">
+<h2> Welcome Back to Renecades, Please Login to Play!</h2>
+<div class="login">
 <%= form_for @user, url: login_path do |f| %>
  <%= f.label :id, "Username:" %><br>
-<%= f.collection_select :username, User.all, :username, :username %>
+<%= f.collection_select :username, User.all, :username, :username, {}, {class: "username-select"} %>
+ <br>
  <br>
  <%= f.label :password, "Password:" %><br>
-<%= f.password_field :password %><br><br>
- <%= f.submit "Log In" %>
+<%= f.password_field :password, class: "password-box" %><br><br>
+ <%= f.submit "Log In", class: 'form-text-box' %>
 <% end %>
 </div>
