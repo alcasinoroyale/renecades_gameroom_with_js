@@ -29,7 +29,6 @@ nav a {
     float: left;
  }
 
-
 h1 {
   color: #A8C4C9;
   font-family: sans-serif;
@@ -150,10 +149,10 @@ a:hover {
 
 .style_image {
   position: absolute;
-  width: 900px;
-  height: 600px;
-  margin-top: -800px;
-  margin-left: 300px;
+  width: 800px;
+  height: 500px;
+  margin-top: -700px;
+  margin-left: 430px;
 }
 
 .game-image {
