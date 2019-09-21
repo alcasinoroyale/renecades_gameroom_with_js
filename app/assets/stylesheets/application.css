@@ -14,7 +14,6 @@
  *= require_self
  */
 
-/* NAVIGATION */
 nav {
   background: #317E94;
   background-size: 840px 190px;
@@ -31,7 +30,6 @@ nav a {
  }
 
 
- /* HEADINGS */
 h1 {
   color: #A8C4C9;
   font-family: sans-serif;
@@ -53,8 +51,6 @@ body {
     font-family: sans-serif;
 }
 
-/* BUTTONS */
-
 .button, input[type="submit" i]{
   color: #fff;
   text-decoration: none;
@@ -73,8 +69,6 @@ form input[type='text'] {
   height: 20px;
 }
 
-/* LINKS */
-
 a:link {
   color: #DDEEF3;
 }
@@ -84,8 +78,6 @@ a:visited {
 a:hover {
   color: #AB9418;
 }
-
-/* CONTAINERS */
 
 .login {
   font-size: 18px;
@@ -156,8 +148,6 @@ a:hover {
   font-size: 20px;
 }
 
-/* IMAGES */
-
 .style_image {
   position: absolute;
   width: 900px;
@@ -169,8 +159,6 @@ a:hover {
 .game-image {
   position: absolute;
 }
-
-/* FOOTER */
 
 .footer {
   position: relative;
