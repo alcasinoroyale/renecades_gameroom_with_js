@@ -162,8 +162,6 @@ a:hover {
 
 .footer {
   position: relative;
-  top: 400px;
-  height: 100px;
-  background-image: url(navimage.png);
-  background-size: 840px 190px
+  top: 350px;
+  height: 150px;
 }
