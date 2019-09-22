@@ -142,6 +142,11 @@ a:hover {
   left: 60px;
 }
 
+.home-links a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .rank {
   color: #DDEEF3;
   font-size: 20px;
