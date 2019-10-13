@@ -1,6 +1,9 @@
 <h1>Reviews</h1>
 
 <% @reviews.each do |review| %>
-  <h3><%= review.title %></h3>
+  <% if @game.id == review.game_id %>
+  <h2><%= review.title %></h2>
+  <h3><%= review.user.username %> | <%= review.created_at.strftime("%B %d, %Y") %></h3>
   <%= review.content %>
+  <% end %>
 <% end %>
