@@ -2,12 +2,11 @@
 
 <%= form_for [@game, @review] do |f| %>
 
-<%= f.label :title, "Title:" %><br>
-<%= f.text_field :title %><br><br>
+<%= f.label :title, "Title", class: 'form-label' %><br>
+<%= f.text_field :title, class: 'review-text-box' %><br><br>
 
-<%= f.label :content, "Content:" %><br>
-<%= f.text_area :content, size: "30x10" %><br><br>
-
-<br><%= f.submit %>
+<%= f.label :content, "Content", class: 'form-label' %><br>
+<%= f.text_area :content, class: 'form-text-area' %><br><br>
+<%= f.submit "Create Review", class: 'form-text-box' %>
 
 <% end %>
