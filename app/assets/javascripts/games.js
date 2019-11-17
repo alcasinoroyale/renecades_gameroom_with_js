@@ -6,6 +6,7 @@ $(document).ready(function() {
   searchKeywords()
   findCategory()
   changeColor()
+  changeTheme()
   orderGames()
 })
 
@@ -191,6 +192,18 @@ function changeColor() {
     document.body.style.color = "black"
     document.getElementsByTagName('H1')[0].style.color = "black"
     document.getElementsByTagName('nav')[0].style.backgroundColor = "#981010"
+    document.getElementsByTagName('nav')[0].style.borderStyle = "solid"
+  })
+}
+
+function changeTheme() {
+  $('#change-theme').on('click', function(event) {
+    event.preventDefault()
+    console.log(document.body)
+    document.body.style.backgroundColor = "#105863"
+    document.body.style.color = "black"
+    document.getElementsByTagName('H1')[0].style.color = "black"
+    document.getElementsByTagName('nav')[0].style.backgroundColor = "#003b6b"
     document.getElementsByTagName('nav')[0].style.borderStyle = "solid"
   })
 }
