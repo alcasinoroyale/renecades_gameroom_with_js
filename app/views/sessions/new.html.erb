@@ -10,3 +10,7 @@
  <%= f.submit "Log In", class: 'form-text-box' %>
 <% end %>
 </div>
+
+<div class="home-links">
+  <%= link_to('Login with Facebook', '/auth/facebook') if !logged_in? %><br>
+</div>

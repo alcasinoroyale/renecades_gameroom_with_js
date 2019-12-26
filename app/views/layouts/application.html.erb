@@ -22,6 +22,7 @@
         <%= link_to "Home", root_path %>
         <% if !logged_in? %>
           <%= link_to "Login", '/login' %>
+          <%= link_to "Join", new_user_path %><br><br>
         <% elsif logged_in? %>
           <%= link_to "Play Games", games_path, class: "games_data" %>
           <%= link_to "Create Games", new_game_path %>
